@@ -1,11 +1,13 @@
 ﻿# K:BDH VN main script file; contains init code and code declarations.
 
 init:
-    image almostblack one = "#0008"
-    image almostblack two = "#000e"
-    
+    image almostblack one = "#0008"  #semitransparent foregrounds used in eyecatch.
+    image almostblack two = "#000e"  #do not use as background if you don't like checker patterns
+        #for a background, use simply "black", defined below as image black = "#000000".
+
     image bg classroom = "Backgrounds/classroom.jpg"
     image bg hallway = "Backgrounds/hallway.png"
+    image bg hallwayFull = "Backgrounds/hallwayFull.png"
     image bg stairwell = "Backgrounds/stairwell.jpg"
     image bg stairwell2 = "Backgrounds/stairwell2.png"
     image bg stairwellbarrier = "Backgrounds/stairwellbarrier.jpg"
@@ -19,10 +21,14 @@ init:
     image bg BeamOrange3 = "Backgrounds/BeamOrange3.jpg"
     image bg BeamOrange4 = "Backgrounds/BeamOrange4.jpg"
     image bg BeamOrange5 = "Backgrounds/BeamOrange5.jpg"
+    image bg KitaguchiStationOutside_Day = "Backgrounds/KitaguchiStationOutside_Day.png"
+    image bg KitaguchiStationOutside_Evening = "Backgrounds/KitaguchiStationOutside_Evening.png"
     image bg KyonRoomLeftClosed = "Backgrounds/KyonRoomLeftClosed.png"
     image bg KyonRoomRightClosed = "Backgrounds/KyonRoomRightClosed.png"
+    image bg KyonRoomFullClosed = "Backgrounds/KyonRoomFullClosed.png"
     image bg KyonRoomLeftMorning = "Backgrounds/KyonRoomLeftMorning.png"
     image bg KyonRoomRightMorning = "Backgrounds/KyonRoomRightMorning.png"
+    image bg KyonRoomFullMorning = "Backgrounds/KyonRoomFullMorning.png"
     image bg KyonHouseNight = "Backgrounds/KyonHouseNight.png"
     image bg KyonHouseDay = "Backgrounds/KyonHouseDay.png"
     image bg KyonKitchenRight = "Backgrounds/KyonKitchenRight.png"
@@ -46,20 +52,31 @@ init:
     image bg TsuruyaMeetingDay = "Backgrounds/TsuruyaMeetingHallDay.png"
     image bg TsuruyaMeetingEvening = "Backgrounds/TsuruyaMeetingHallEvening.png"
     image bg TsuruyaMeetingNight = "Backgrounds/TsuruyaMeetingHallNight.png"
+    image bg TownCommercialDistrict_Day = "Backgrounds/TownCommercialDistrict_Day.png"
+    image bg TownCommercialDistrict_Evening = "Backgrounds/TownCommercialDistrict_Evening.png"
+    image bg TownCommercialDistrict_Night = "Backgrounds/TownCommercialDistrict_Night.png"
+    image bg TownStreetEvening1 = "Backgrounds/TownStreetEvening1.png"
+    image bg TownStreetEvening2 = "Backgrounds/TownStreetEvening2.png"
+    image bg TownStreetEveningFull = "Backgrounds/TownStreetEveningFull.png"
     image bg TownStreetNight1 = "Backgrounds/TownStreetNight1.png"
     image bg TownStreetNight2 = "Backgrounds/TownStreetNight2.png"
     image bg TownStreetDay1 = "Backgrounds/TownStreetDay1.jpg"
     image bg TownStreetDay2 = "Backgrounds/TownStreetDay2.jpg"
     image bg TownStreetDay3 = "Backgrounds/TownStreetDay3.jpg"
+    image bg TownFull = "Backgrounds/TownFull.png"
     image bg TownLeft = "Backgrounds/Townleft.png"
+    image bg TownRight = "Backgrounds/TownRight.png"
     image bg Elevator = "Backgrounds/ElevatorInterior.png"                                                         
-    image bg ClubHallLeft = "Backgrounds/ClubHallLeft.png"
+    image bg ClubHallLeft = "Backgrounds/ClubHallLeft.png"                                     
+    image bg ClubHallRight = "Backgrounds/ClubHallRight.png"                                     
+    image bg ClubHallFull = "Backgrounds/ClubHallFull.png"
     image bg ClubroomCenterDay = "Backgrounds/ClubroomCenterDay.png"
     image bg ClubroomLeftDay = "Backgrounds/ClubroomLeftDay.png"
     image bg ClubroomFullDay ="Backgrounds/ClubroomFullDay.jpg"
     image bg ClubroomRightDay = "Backgrounds/ClubroomRightDay.png"
     image bg ClubroomFullNight = "Backgrounds/ClubroomFullNight.png"
     image bg ClubroomBack = "Backgrounds/ClubBack.png"
+    image bg ClubHallOutside = "Backgrounds/ClubHallOutside.png"
     image ClubTable ="Backgrounds/ClubTable.png"
     image bg YukiApartmentDay = "Backgrounds/YukiApartmentDay.png"
     image bg YukiApartmentNight = "Backgrounds/YukiApartmentNight.png"
@@ -72,6 +89,10 @@ init:
     image bg SchoolEntranceRight = "Backgrounds/SchoolEntranceLeft.png"
     image bg SchoolBathroom = "Backgrounds/SchoolBathroom.png"
     image bg SchoolTable = "Backgrounds/SchoolTable.png"
+    image bg SchoolTreeFull = "Backgrounds/SchoolTreeFull.png"
+    image bg SchoolTreeLeft = "Backgrounds/SchoolTreeLeft.png"
+    image bg SchoolTreeRight = "Backgrounds/SchoolTreeRight.png"
+    image bg SchoolTreeCenter = "Backgrounds/SchoolTreeCenter.png"
     image bg Cafe = "Backgrounds/Cafe.jpg"
     image bg ParkBench = "Backgrounds/ParkBench.png"
     image bg ParkPath = "Backgrounds/ParkPath.png"
@@ -119,6 +140,7 @@ init:
     image TownHillLeftMorning =  "Backgrounds/TownHillLeftMorning.png"
     image bg IdolClubDark = "Backgrounds/IdolClubDark.png"
     image bg IdolClubLight = "Backgrounds/IdolClubLight.png"
+    image bg MaseoBase = "Backgrounds/MaseoBase.png"
     
     
     image lowkick1 = im.Alpha("Backgrounds/Effects/lowkick1.png", 0.75)
@@ -379,6 +401,9 @@ init:
     image Haruhi Unhap3 Flip = im.Flip("Sprites/Haruhi/HaruhiSideUnhappy3.png", horizontal=True)
     image Haruhi Eyeroll1 Flip = im.Flip("Sprites/Haruhi/HaruhiSideEyeroll1.png", horizontal=True)
     image Haruhi Eyeroll2 Flip = im.Flip("Sprites/Haruhi/HaruhiSideEyeroll2.png", horizontal=True)
+    image Haruhi Worry1 Flip = im.Flip("Sprites/Haruhi/HaruhiSideWorry1.png", horizontal=True)
+    image Haruhi Worry2 Flip = im.Flip("Sprites/Haruhi/HaruhiSideWorry2.png", horizontal=True)
+    image Haruhi Worry3 Flip = im.Flip("Sprites/Haruhi/HaruhiSideWorry3.png", horizontal=True)
     
     image Haruhi Crossed Sup1 Flip = im.Flip("Sprites/Haruhi/HaruhiCrossedSurprised1.png", horizontal=True)
     image Haruhi Crossed Sup2 Flip = im.Flip("Sprites/Haruhi/HaruhiCrossedSurprised2.png", horizontal=True)
@@ -407,7 +432,6 @@ init:
     image Haruhi Crossed Sigh2 Flip = im.Flip("Sprites/Haruhi/HaruhiCrossedSigh2.png", horizontal=True)
     image Haruhi Crossed Tsun1 Flip = im.Flip("Sprites/Haruhi/HaruhiCrossedTsun1.png", horizontal=True)
     image Haruhi Crossed Tsun2 Flip = im.Flip("Sprites/Haruhi/HaruhiCrossedTsun2.png", horizontal=True)
-    
    
     #Kyon Sprites
     image Kyon Ser1 = "Sprites/Kyon/KyonSerious1.png"
@@ -446,6 +470,8 @@ init:
     image Kyon Puzzle2 = "Sprites/Kyon/KyonPuzzled2.png"
     image Kyon Sup1 = "Sprites/Kyon/KyonSurprised1.png"
     image Kyon Sup2 = "Sprites/Kyon/KyonSurprised2.png"
+    image Kyon Sup3 = "Sprites/Kyon/KyonSurprised3.png"
+    image Kyon Sup4 = "Sprites/Kyon/KyonSurprised4.png"
     image Kyon Unhap1 ="Sprites/Kyon/KyonUnhappy1.png"
     image Kyon Unhap2 ="Sprites/Kyon/KyonUnhappy2.png"
     image Kyon Unhap3 ="Sprites/Kyon/KyonUnhappy3.png"
@@ -578,6 +604,8 @@ init:
     image Kyon Ser3 Flip = im.Flip("Sprites/Kyon/KyonSerious3.png", horizontal=True)
     image Kyon Sup1 Flip = im.Flip("Sprites/Kyon/KyonSurprised2.png", horizontal=True)
     image Kyon Sup2 Flip = im.Flip("Sprites/Kyon/KyonSurprised2.png", horizontal=True)
+    image Kyon Sup3 Flip = im.Flip("Sprites/Kyon/KyonSurprised3.png", horizontal=True)
+    image Kyon Sup4 Flip = im.Flip("Sprites/Kyon/KyonSurprised4.png", horizontal=True)
     image Kyon Unhap1 Flip = im.Flip("Sprites/Kyon/KyonUnhappy1.png", horizontal=True)
     image Kyon Unhap2 Flip = im.Flip("Sprites/Kyon/KyonUnhappy2.png", horizontal=True)
     image Kyon Unhap3 Flip = im.Flip("Sprites/Kyon/KyonUnhappy3.png", horizontal=True)
@@ -633,7 +661,6 @@ init:
     image Kyon Casual Pain1 Flip = im.Flip("Sprites/Kyon/KyonCasualPained1.png", horizontal=True)
     image Kyon Casual Pain2 Flip = im.Flip("Sprites/Kyon/KyonCasualPained2.png", horizontal=True)
     image Kyon Casual Evil1 Flip = im.Flip("Sprites/Kyon/KyonCasualEvil1.png", horizontal=True)
-    
     
     image Ksweat Flip = im.Flip("Sprites/Kyon/KyonSweat1.png", horizontal=True)
     
@@ -732,8 +759,50 @@ init:
         "Sprites/Yuki/YukiSide1.png"
         3
         repeat
-
-    # Mikuru Sprites 
+        
+    #Yuki Image Flips    
+    image Yuki Side1 Flip = im.Flip("Sprites/Yuki/YukiSide1.png", horizontal=True)
+    image Yuki Side2 Flip = im.Flip("Sprites/Yuki/YukiSide2.png", horizontal=True)
+    image Yuki SideDisappointed1 Flip = im.Flip("Sprites/Yuki/YukiSideDisappointed1.png", horizontal=True)
+    image Yuki SideDisappointedTalk1 Flip = im.Flip("Sprites/Yuki/YukiSideDisappointedTalk1.png", horizontal=True)
+    image Yuki SideEyesClosed1 Flip = im.Flip("Sprites/Yuki/YukiSideEyesClosed1.png", horizontal=True)
+    image Yuki Ang1 Flip = im.Flip("Sprites/Yuki/YukiSideAngry1.png", horizontal=True)
+    image Yuki Talk1 Flip = im.Flip("Sprites/Yuki/YukiSideTalk1.png", horizontal=True)
+    image Yuki Talk2 Flip = im.Flip("Sprites/Yuki/YukiSideTalk2.png", horizontal=True)
+    image Yuki Sad1 Flip = im.Flip("Sprites/Yuki/YukiSideSad1.png", horizontal=True)
+    image Yuki Sad2 Flip = im.Flip("Sprites/Yuki/YukiSideSad2.png", horizontal=True)
+    image Yuki Sad3 Flip = im.Flip("Sprites/Yuki/YukiSideSad3.png", horizontal=True)
+    image Yuki SadTalk1 Flip = im.Flip("Sprites/Yuki/YukiSideSadTalk1.png", horizontal=True)
+    image Yuki SadTalk2 Flip = im.Flip("Sprites/Yuki/YukiSideSadTalk2.png", horizontal=True)
+    image Yuki SadTalk3 Flip = im.Flip("Sprites/Yuki/YukiSideSadTalk3.png", horizontal=True)
+        
+    image Yuki Casual Side1 Flip = im.Flip("Sprites/Yuki/YukiSideCasual1.png", horizontal=True)
+    image Yuki Casual Side2 Flip = im.Flip("Sprites/Yuki/YukiSideCasual2.png", horizontal=True)
+    image Yuki Casual Ang1 Flip = im.Flip("Sprites/Yuki/YukiSideCasualAngry1.png", horizontal=True)
+    image Yuki Casual Talk1 Flip = im.Flip("Sprites/Yuki/YukiSideCasualTalk1.png", horizontal=True)
+    image Yuki Casual Talk2 Flip = im.Flip("Sprites/Yuki/YukiSideCasualTalk2.png", horizontal=True)
+    image Yuki Casual Sad1 Flip = im.Flip("Sprites/Yuki/YukiSideCasualSad1.png", horizontal=True)
+    image Yuki Casual Sad2 Flip = im.Flip("Sprites/Yuki/YukiSideCasualSad2.png", horizontal=True)
+    image Yuki Casual Sad3 Flip = im.Flip("Sprites/Yuki/YukiSideCasualSad3.png", horizontal=True)
+    image Yuki Casual SadTalk2 Flip = im.Flip("Sprites/Yuki/YukiSideCasualSadTalk2.png", horizontal=True)
+    image Yuki Casual SadTalk3 Flip = im.Flip("Sprites/Yuki/YukiSideCasualSadTalk3.png", horizontal=True)
+    
+    image Yuki Chair1 Flip = im.Flip("Sprites/Yuki/YukiChair1.png", horizontal=True)
+    image Yuki Chair2 Flip = im.Flip("Sprites/Yuki/YukiChair2.png", horizontal=True)
+    image Yuki Chair3 Flip = im.Flip("Sprites/Yuki/YukiChair3.png", horizontal=True)
+    image Yuki Chair4 Flip = im.Flip("Sprites/Yuki/YukiChair4.png", horizontal=True)
+    
+    image Yuki Right Neutral1 Flip = im.Flip("Sprites/Yuki/YukiRightNeutral1.png", horizontal=True)
+    image Yuki Right Neutral2 Flip = im.Flip("Sprites/Yuki/YukiRightNeutral2.png", horizontal=True)
+    image Yuki Right Talk1 Flip = im.Flip("Sprites/Yuki/YukiRightTalk1.png", horizontal=True)
+    image Yuki Right Talk2 Flip = im.Flip("Sprites/Yuki/YukiRightTalk2.png", horizontal=True)
+    
+    image Yuki Right Casual Neutral1 = im.Flip("Sprites/Yuki/YukiRightCasualNeutral1.png", horizontal=True)
+    image Yuki Right Casual Neutral2 = im.Flip("Sprites/Yuki/YukiRightCasualNeutral2.png", horizontal=True)
+    image Yuki Right Casual Talk1 = im.Flip("Sprites/Yuki/YukiRightCasualTalk1.png", horizontal=True)
+    image Yuki Right Casual Talk2 = im.Flip("Sprites/Yuki/YukiRightCasualTalk2.png", horizontal=True)
+        
+        # Mikuru Sprites 
     image Mikuru Hap1 = "Sprites/Mikuru/MikuruHappy1.png"
     image Mikuru Hap2 = "Sprites/Mikuru/MikuruHappy2.png"
     image Mikuru Neutral1 = "Sprites/Mikuru/MikuruNeutral1.png"
@@ -741,6 +810,7 @@ init:
     image Mikuru Neutral3 = "Sprites/Mikuru/MikuruNeutral3.png"
     image Mikuru Sad1 = "Sprites/Mikuru/MikuruSad1.png"
     image Mikuru Sad2 = "Sprites/Mikuru/MikuruSad2.png"
+    image Mikuru Sad3 = "Sprites/Mikuru/MikuruSad3.png"
     image Mikuru Sigh1 = "Sprites/Mikuru/MikuruSigh1.png"
     image Mikuru Sigh2 = "Sprites/Mikuru/MikuruSigh2.png"
     image Mikuru Ser1 = "Sprites/Mikuru/MikuruSerious1.png"
@@ -764,6 +834,7 @@ init:
     image Mikuru Casual Neutral3 = "Sprites/Mikuru/MikuruCasualNeutral3.png"
     image Mikuru Casual Sad1 = "Sprites/Mikuru/MikuruCasualSad1.png"
     image Mikuru Casual Sad2 = "Sprites/Mikuru/MikuruCasualSad2.png"
+    image Mikuru Casual Sad3 = "Sprites/Mikuru/MikuruCasualSad3.png"
     image Mikuru Casual Sigh1 = "Sprites/Mikuru/MikuruCasualSigh1.png"
     image Mikuru Casual Sigh2 = "Sprites/Mikuru/MikuruCasualSigh2.png"
     image Mikuru Casual Ser1 = "Sprites/Mikuru/MikuruCasualSerious1.png"
@@ -787,6 +858,7 @@ init:
     image Mikuru Maid Neutral3 = "Sprites/Mikuru/MikuruMaidNeutral3.png"
     image Mikuru Maid Sad1 = "Sprites/Mikuru/MikuruMaidSad1.png"
     image Mikuru Maid Sad2 = "Sprites/Mikuru/MikuruMaidSad2.png"
+    image Mikuru Maid Sad3 = "Sprites/Mikuru/MikuruMaidSad3.png"
     image Mikuru Maid Sigh1 = "Sprites/Mikuru/MikuruMaidSigh1.png"
     image Mikuru Maid Sigh2 = "Sprites/Mikuru/MikuruMaidSigh2.png"
     image Mikuru Maid Ser1 = "Sprites/Mikuru/MikuruMaidSerious1.png"
@@ -843,8 +915,15 @@ init:
     image MBlush Think = "Sprites/Mikuru/MBlushThink1.png"
     
     image Mikuru Think Quest1 Flip = im.Flip("Sprites/Mikuru/MikuruThinkQuestion1.png", horizontal=True)
+    image Mikuru Think Quest2 Flip = im.Flip("Sprites/Mikuru/MikuruThinkQuestion2.png", horizontal=True)
+    image Mikuru Think Quest3 Flip = im.Flip("Sprites/Mikuru/MikuruThinkQuestion3.png", horizontal=True)
     image Mikuru Think Casual Quest1 Flip = im.Flip("Sprites/Mikuru/MikuruThinkCasualQuestion1.png", horizontal=True)
+    image Mikuru Think Casual Quest2 Flip = im.Flip("Sprites/Mikuru/MikuruThinkCasualQuestion2.png", horizontal=True)
+    image Mikuru Think Casual Quest3 Flip = im.Flip("Sprites/Mikuru/MikuruThinkCasualQuestion3.png", horizontal=True)
     image Mikuru Think Maid Quest1 Flip = im.Flip("Sprites/Mikuru/MikuruThinkMaidQuestion1.png", horizontal=True)
+    image Mikuru Think Maid Quest2 Flip = im.Flip("Sprites/Mikuru/MikuruThinkMaidQuestion2.png", horizontal=True)
+    image Mikuru Think Maid Quest3 Flip = im.Flip("Sprites/Mikuru/MikuruThinkMaidQuestion3.png", horizontal=True)
+    image MBlush Think Flip = im.Flip("Sprites/Mikuru/MBlushThink1.png", horizontal=True)
     
     image Mikuru Cower Nervous1 = "Sprites/Mikuru/MikuruCowerNervous1.png"
     image Mikuru Cower Nervous2 = "Sprites/Mikuru/MikuruCowerNervous2.png"
@@ -860,7 +939,8 @@ init:
     image Mikuru Cower Unhap1 = "Sprites/Mikuru/MikuruCowerUnhappy1.png"
     image Mikuru Cower Worry1 = "Sprites/Mikuru/MikuruCowerWorry1.png"
     
-    image MBlush Cower = "Sprites/Mikuru/MikuruCowerBlush1.png"
+    image MBlush Cower = "Sprites/Mikuru/MikuruCowerBlush.png"
+    image MBlush Cower Casual = "Sprites/Mikuru/MikuruCowerCasualBlush.png"
     image MBlush Cower Towel = "Sprites/Mikuru/MblushCowerTowel.png"
     image MTears = "Sprites/Mikuru/MTearsCower1.png"
     
@@ -910,6 +990,7 @@ init:
     image MikuruBig Neutral1 = "Sprites/MikuruBig/MikuruBigNeutral1.png"
     image MikuruBig Neutral2 = "Sprites/MikuruBig/MikuruBigNeutral2.png"
     image MikuruBig Quest1 = "Sprites/MikuruBig/MikuruBigQuestion1.png"
+    image MikuruBig Quest2 = "Sprites/MikuruBig/MikuruBigQuestion2.png"
     image MikuruBig Sad1 = "Sprites/MikuruBig/MikuruBigSad1.png"
     image MikuruBig Sad2 = "Sprites/MikuruBig/MikuruBigSad2.png"
     image MikuruBig Ser1 = "Sprites/MikuruBig/MikuruBigSerious1.png"
@@ -920,6 +1001,7 @@ init:
     image MikuruBig Smile3 = "Sprites/MikuruBig/MikuruBigSmile3.png"
     image MikuruBig Sup1 = "Sprites/MikuruBig/MikuruBigSurprised1.png"
     image MikuruBig Sup2 = "Sprites/MikuruBig/MikuruBigSurprised2.png"
+    image MikuruBig Sup3 = "Sprites/MikuruBig/MikuruBigSurprised3.png"
     image MikuruBig Worry1 = "Sprites/MikuruBig/MikuruBigWorry1.png"
     image MikuruBig Worry2 = "Sprites/MikuruBig/MikuruBigWorry2.png"
     
@@ -939,6 +1021,32 @@ init:
     
     image MKiss = "Sprites/MikuruBig/MKiss.png"
     
+    image Mikuru Cower Blink:
+        "Sprites/Mikuru/MikuruCowerBlink1.png"
+        0.2
+        "Sprites/Mikuru/MikuruCowerBlink2.png"
+        0.2
+        "Sprites/Mikuru/MikuruCowerBlink1.png"
+        5.0
+        repeat    
+    image Mikuru Cower Casual Blink:
+        "Sprites/Mikuru/MikuruCowerCasualBlink1.png"
+        0.2
+        "Sprites/Mikuru/MikuruCowerCasualBlink2.png"
+        0.2
+        "Sprites/Mikuru/MikuruCowerCasualBlink1.png"
+        5.0
+        repeat    
+    image Mikuru Cower Maid Blink:
+        "Sprites/Mikuru/MikuruCowerMaidBlink1.png"
+        0.2
+        "Sprites/Mikuru/MikuruCowerMaidBlink2.png"
+        0.2
+        "Sprites/Mikuru/MikuruCowerMaidBlink1.png"
+        5.0
+        repeat    
+    
+    
     #Tsuruya Sprites
     image Tsuruya Ang1 = "Sprites/Tsuruya/TsuruyaAngry1.png"
     image Tsuruya Ang2 = "Sprites/Tsuruya/TsuruyaAngry2.png"
@@ -957,6 +1065,8 @@ init:
     image Tsuruya Hap5 = "Sprites/Tsuruya/TsuruyaHappy5.png"
     image Tsuruya Hap6 = "Sprites/Tsuruya/TsuruyaHappy6.png"
     image Tsuruya Hap7 = "Sprites/Tsuruya/TsuruyaHappy7.png"
+    image Tsuruya Hap8 = "Sprites/Tsuruya/TsuruyaHappy8.png"
+    image Tsuruya Hap9 = "Sprites/Tsuruya/TsuruyaHappy9.png"
     image Tsuruya Laugh1 = "Sprites/Tsuruya/TsuruyaLaugh1.png"
     image Tsuruya Laugh2 = "Sprites/Tsuruya/TsuruyaLaugh2.png"
     image Tsuruya Quest1 = "Sprites/Tsuruya/TsuruyaQuestion1.png"
@@ -964,6 +1074,9 @@ init:
     image Tsuruya Sigh1 = "Sprites/Tsuruya/TsuruyaSigh1.png"
     image Tsuruya Sigh2 = "Sprites/Tsuruya/TsuruyaSigh2.png"
     image Tsuruya Sigh3 = "Sprites/Tsuruya/TsuruyaSigh3.png"
+    image Tsuruya Sigh3 = "Sprites/Tsuruya/TsuruyaSigh3.png"
+    image Tsuruya Sigh4 = "Sprites/Tsuruya/TsuruyaSigh4.png"
+    image Tsuruya Sigh5 = "Sprites/Tsuruya/TsuruyaSigh5.png"
     image Tsuruya Smile1 = "Sprites/Tsuruya/TsuruyaSmile1.png"
     image Tsuruya Smile2 = "Sprites/Tsuruya/TsuruyaSmile2.png"
     image Tsuruya Smile3 = "Sprites/Tsuruya/TsuruyaSmile3.png"
@@ -977,7 +1090,9 @@ init:
     image Tsuruya Neutral1 = "Sprites/Tsuruya/TsuruyaNeutral1.png"
     image Tsuruya Neutral2 = "Sprites/Tsuruya/TsuruyaNeutral2.png"
     image Tsuruya Susp1 = "Sprites/Tsuruya/TsuruyaSuspicious1.png"
+    image Tsuruya Susp2 = "Sprites/Tsuruya/TsuruyaSuspicious2.png"
     image Tsuruya Ser1 = "Sprites/Tsuruya/TsuruyaSerious1.png"
+    image Tsuruya Ser2 = "Sprites/Tsuruya/TsuruyaSerious2.png"
     image Tsuruya Sad1 = "Sprites/Tsuruya/TsuruyaSad1.png"
     
     image Tsuruya Casual Ang1 = "Sprites/Tsuruya/TsuruyaCasualAngry1.png"
@@ -1004,6 +1119,7 @@ init:
     image Tsuruya Casual Sigh1 = "Sprites/Tsuruya/TsuruyaCasualSigh1.png"
     image Tsuruya Casual Sigh2 = "Sprites/Tsuruya/TsuruyaCasualSigh2.png"
     image Tsuruya Casual Sigh3 = "Sprites/Tsuruya/TsuruyaCasualSigh3.png"
+    image Tsuruya Casual Sigh4 = "Sprites/Tsuruya/TsuruyaCasualSigh4.png"
     image Tsuruya Casual Smile1 = "Sprites/Tsuruya/TsuruyaCasualSmile1.png"
     image Tsuruya Casual Smile2 = "Sprites/Tsuruya/TsuruyaCasualSmile2.png"
     image Tsuruya Casual Smile3 = "Sprites/Tsuruya/TsuruyaCasualSmile3.png"
@@ -1022,15 +1138,39 @@ init:
     
     image Tsuruya Wave Grin1 = "Sprites/Tsuruya/TsuruyaWaveGrin1.png"
     image Tsuruya Wave Grin2 = "Sprites/Tsuruya/TsuruyaWaveGrin2.png"
+    image Tsuruya Wave Grin3 = "Sprites/Tsuruya/TsuruyaWaveGrin3.png"
     image Tsuruya Wave Hap1 = "Sprites/Tsuruya/TsuruyaWaveHappy1.png"
     image Tsuruya Wave Hap2 = "Sprites/Tsuruya/TsuruyaWaveHappy2.png"
     image Tsuruya Wave Hap3 = "Sprites/Tsuruya/TsuruyaWaveHappy3.png"
     image Tsuruya Wave Hap4 = "Sprites/Tsuruya/TsuruyaWaveHappy4.png"
     image Tsuruya Wave Hap5 = "Sprites/Tsuruya/TsuruyaWaveHappy5.png"
     image Tsuruya Wave Hap6 = "Sprites/Tsuruya/TsuruyaWaveHappy6.png"
+    image Tsuruya Wave Hap7 = "Sprites/Tsuruya/TsuruyaWaveHappy7.png"
     image Tsuruya Wave Quest1 = "Sprites/Tsuruya/TsuruyaWaveQuestion1.png"
+    image Tsuruya Wave Quest2 = "Sprites/Tsuruya/TsuruyaWaveQuestion2.png"
     image Tsuruya Wave Smile1 = "Sprites/Tsuruya/TsuruyaWaveSmile1.png"
     image Tsuruya Wave Smile2 = "Sprites/Tsuruya/TsuruyaWaveSmile2.png"
+    image Tsuruya Wave Sigh1 = "Sprites/Tsuruya/TsuruyaWaveSigh1.png"
+    image Tsuruya Wave Ser1 = "Sprites/Tsuruya/TsuruyaWaveSerious1.png"
+    image Tsuruya Wave Ser2 = "Sprites/Tsuruya/TsuruyaWaveSerious2.png"
+    
+    image Tsuruya Kimono Grin1 = "Sprites/Tsuruya/TsuruyaKimonoGrin1.png"
+    image Tsuruya Kimono Grin2 = "Sprites/Tsuruya/TsuruyaKimonoGrin2.png"
+    image Tsuruya Kimono Grin3 = "Sprites/Tsuruya/TsuruyaKimonoGrin3.png"
+    image Tsuruya Kimono Hap1 = "Sprites/Tsuruya/TsuruyaKimonoHappy1.png"
+    image Tsuruya Kimono Hap2 = "Sprites/Tsuruya/TsuruyaKimonoHappy2.png"
+    image Tsuruya Kimono Hap3 = "Sprites/Tsuruya/TsuruyaKimonoHappy3.png"
+    image Tsuruya Kimono Hap4 = "Sprites/Tsuruya/TsuruyaKimonoHappy4.png"
+    image Tsuruya Kimono Hap5 = "Sprites/Tsuruya/TsuruyaKimonoHappy5.png"
+    image Tsuruya Kimono Hap6 = "Sprites/Tsuruya/TsuruyaKimonoHappy6.png"
+    image Tsuruya Kimono Hap7 = "Sprites/Tsuruya/TsuruyaKimonoHappy7.png"
+    image Tsuruya Kimono Quest1 = "Sprites/Tsuruya/TsuruyaKimonoQuestion1.png"
+    image Tsuruya Kimono Quest2 = "Sprites/Tsuruya/TsuruyaKimonoQuestion2.png"
+    image Tsuruya Kimono Smile1 = "Sprites/Tsuruya/TsuruyaKimonoSmile1.png"
+    image Tsuruya Kimono Smile2 = "Sprites/Tsuruya/TsuruyaKimonoSmile2.png"
+    image Tsuruya Kimono Sigh1 = "Sprites/Tsuruya/TsuruyaKimonoSigh1.png"
+    image Tsuruya Kimono Ser1 = "Sprites/Tsuruya/TsuruyaKimonoSerious1.png"
+    image Tsuruya Kimono Ser2 = "Sprites/Tsuruya/TsuruyaKimonoSerious2.png"
     
     image Tsuruya Laugh Ang1  = "Sprites/Tsuruya/TsuruyaLaughAngry1.png"
     image Tsuruya Laugh Ang2  = "Sprites/Tsuruya/TsuruyaLaughAngry2.png"
@@ -1038,6 +1178,8 @@ init:
     image Tsuruya Laugh Pain1 = "Sprites/Tsuruya/TsuruyaLaughPain1.png"
     image Tsuruya Laugh Pain2 = "Sprites/Tsuruya/TsuruyaLaughPain2.png"
     image Tsuruya Laugh Pain3 = "Sprites/Tsuruya/TsuruyaLaughPain3.png"
+    image Tsuruya Laugh Pain4 = "Sprites/Tsuruya/TsuruyaLaughPain4.png"
+    image Tsuruya Laugh Sad1 = "Sprites/Tsuruya/TsuruyaLaughSad1.png"
     
     image Tsuruya Laugh Casual Ang1  = "Sprites/Tsuruya/TsuruyaLaughCasualAngry1.png"
     image Tsuruya Laugh Casual Ang2  = "Sprites/Tsuruya/TsuruyaLaughCasualAngry2.png"
@@ -1045,7 +1187,10 @@ init:
     image Tsuruya Laugh Casual Pain1 = "Sprites/Tsuruya/TsuruyaLaughCasualPain1.png"
     image Tsuruya Laugh Casual Pain2 = "Sprites/Tsuruya/TsuruyaLaughCasualPain2.png"
     image Tsuruya Laugh Casual Pain3 = "Sprites/Tsuruya/TsuruyaLaughCasualPain3.png"
-    
+    image Tsuruya Laugh Casual Pain4 = "Sprites/Tsuruya/TsuruyaLaughCasualPain4.png"
+    image Tsuruya Laugh Casual Sad1 = "Sprites/Tsuruya/TsuruyaLaughCasualSad1.png"
+   
+    image TBlush = "Sprites/Tsuruya/TBlush.png"
     image Tsweat = "Sprites/Tsuruya/Tsweat.png"
     image Tsweat Casual = "Sprites/Tsuruya/TsweatCasual.png"
     
@@ -1066,10 +1211,14 @@ init:
     image Tsuruya Smile5 Flip = im.Flip("Sprites/Tsuruya/TsuruyaSmile5.png", horizontal=True)
     image Tsuruya Smile6 Flip = im.Flip("Sprites/Tsuruya/TsuruyaSmile6.png", horizontal=True)
     image Tsuruya Quest1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaQuestion1.png", horizontal=True)
+    image Tsuruya Quest2 Flip = im.Flip("Sprites/Tsuruya/TsuruyaQuestion2.png", horizontal=True)
     image Tsuruya Ser1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaSerious1.png", horizontal=True)
+    image Tsuruya Ser2 Flip = im.Flip("Sprites/Tsuruya/TsuruyaSerious2.png", horizontal=True)
     image Tsuruya Sigh1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaSigh1.png", horizontal=True)
     image Tsuruya Sigh2 Flip = im.Flip("Sprites/Tsuruya/TsuruyaSigh2.png", horizontal=True)
     image Tsuruya Sigh3 Flip = im.Flip("Sprites/Tsuruya/TsuruyaSigh3.png", horizontal=True)
+    image Tsuruya Sigh4 Flip = im.Flip("Sprites/Tsuruya/TsuruyaSigh4.png", horizontal=True)
+    image Tsuruya Sigh5 Flip = im.Flip("Sprites/Tsuruya/TsuruyaSigh5.png", horizontal=True)
     image Tsuruya Sup1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaSurprised1.png", horizontal=True)
     image Tsuruya Worry1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaWorry1.png", horizontal=True)
     image Tsuruya Worry2 Flip = im.Flip("Sprites/Tsuruya/TsuruyaWorry2.png", horizontal=True)
@@ -1083,10 +1232,14 @@ init:
     image Tsuruya Hap5 Flip = im.Flip("Sprites/Tsuruya/TsuruyaHappy5.png", horizontal=True)
     image Tsuruya Hap6 Flip = im.Flip("Sprites/Tsuruya/TsuruyaHappy6.png", horizontal=True)
     image Tsuruya Hap7 Flip = im.Flip("Sprites/Tsuruya/TsuruyaHappy7.png", horizontal=True)
+    image Tsuruya Hap8 Flip = im.Flip("Sprites/Tsuruya/TsuruyaHappy8.png", horizontal=True)
+    image Tsuruya Hap9 Flip = im.Flip("Sprites/Tsuruya/TsuruyaHappy9.png", horizontal=True)
     image Tsuruya Ang1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaAngry1.png", horizontal=True)
     image Tsuruya Ang2 Flip = im.Flip("Sprites/Tsuruya/TsuruyaAngry2.png", horizontal=True)
     image Tsuruya Ang3 Flip = im.Flip("Sprites/Tsuruya/TsuruyaAngry3.png", horizontal=True)
-    image Tsuruya Ang4 Flip = im.Flip("Sprites/Tsuruya/TsuruyaAngry4.png", horizontal=True)    
+    image Tsuruya Ang4 Flip = im.Flip("Sprites/Tsuruya/TsuruyaAngry4.png", horizontal=True)
+    image Tsuruya Susp1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaSuspicious1.png", horizontal=True)
+    image Tsuruya Susp2 Flip = im.Flip("Sprites/Tsuruya/TsuruyaSuspicious2.png", horizontal=True)
     
     image Tsuruya Casual Grin1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualGrin1.png", horizontal=True)
     image Tsuruya Casual Grin2 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualGrin2.png", horizontal=True)
@@ -1101,6 +1254,13 @@ init:
     image Tsuruya Casual Smile5 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualSmile5.png", horizontal=True)
     image Tsuruya Casual Smile6 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualSmile6.png", horizontal=True)
     image Tsuruya Casual Quest1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualQuestion1.png", horizontal=True)
+    image Tsuruya Casual Ser1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualSerious1.png", horizontal=True)
+    image Tsuruya Casual Ser2 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualSerious2.png", horizontal=True)
+    image Tsuruya Casual Sigh1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualSigh1.png", horizontal=True)
+    image Tsuruya Casual Sigh2 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualSigh2.png", horizontal=True)
+    image Tsuruya Casual Sigh3 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualSigh3.png", horizontal=True)
+    image Tsuruya Casual Sigh4 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualSigh4.png", horizontal=True)
+    image Tsuruya Casual Sup1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualSurprised1.png", horizontal=True)
     image Tsuruya Casual Worry1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualWorry1.png", horizontal=True)
     image Tsuruya Casual Worry2 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualWorry2.png", horizontal=True)
     image Tsuruya Casual Worry3 Flip = im.Flip("Sprites/Tsuruya/TsuruyaCasualWorry3.png", horizontal=True)
@@ -1123,6 +1283,8 @@ init:
     image Tsuruya Laugh Pain1 Flip =  im.Flip("Sprites/Tsuruya/TsuruyaLaughPain1.png", horizontal=True)
     image Tsuruya Laugh Pain2 Flip =  im.Flip("Sprites/Tsuruya/TsuruyaLaughPain2.png", horizontal=True)
     image Tsuruya Laugh Pain3 Flip =  im.Flip("Sprites/Tsuruya/TsuruyaLaughPain3.png", horizontal=True)
+    image Tsuruya Laugh Pain4 Flip =  im.Flip("Sprites/Tsuruya/TsuruyaLaughPain4.png", horizontal=True)
+    image Tsuruya Laugh Sad1 Flip =  im.Flip("Sprites/Tsuruya/TsuruyaLaughSad1.png", horizontal=True)
     
     image Tsuruya Laugh Casual Ang1 Flip = im.Flip("Sprites/Tsuruya/TsuruyaLaughCasualAngry1.png", horizontal=True)
     image Tsuruya Laugh Casual Ang2 Flip = im.Flip("Sprites/Tsuruya/TsuruyaLaughCasualAngry2.png", horizontal=True)
@@ -1130,6 +1292,8 @@ init:
     image Tsuruya Laugh Casual Pain1 Flip =  im.Flip("Sprites/Tsuruya/TsuruyaLaughCasualPain1.png", horizontal=True)
     image Tsuruya Laugh Casual Pain2 Flip =  im.Flip("Sprites/Tsuruya/TsuruyaLaughCasualPain2.png", horizontal=True)
     image Tsuruya Laugh Casual Pain3 Flip =  im.Flip("Sprites/Tsuruya/TsuruyaLaughCasualPain3.png", horizontal=True)
+    image Tsuruya Laugh Casual Pain4 Flip =  im.Flip("Sprites/Tsuruya/TsuruyaLaughCasualPain4.png", horizontal=True)
+    image Tsuruya Laugh Casual Sad1 Flip =  im.Flip("Sprites/Tsuruya/TsuruyaLaughCasualSad1.png", horizontal=True)
     
     image Tsweat Flip = im.Flip("Sprites/Tsuruya/Tsweat.png", horizontal=True)
     image Tsweat Casual Flip = im.Flip("Sprites/Tsuruya/TsweatCasual.png", horizontal=True)
@@ -1270,6 +1434,35 @@ init:
     image Koizumi Crossed Casual Neutral2 = "Sprites/Koizumi/KoizumiCrossedCasualNeutral2.png"
     
     #Koizumi image flips
+    image Koizumi Shrug Sigh1 Flip = im.Flip("Sprites/Koizumi/KoizumiShrugSigh1.png", horizontal=True)
+    image Koizumi Shrug Smile1 Flip = im.Flip("Sprites/Koizumi/KoizumiShrugSmile1.png", horizontal=True)
+    
+    image Koizumi Think Ser1 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkSerious1.png", horizontal=True)
+    image Koizumi Think Ser2 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkSerious2.png", horizontal=True)
+    image Koizumi Think Ser3 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkSerious3.png", horizontal=True)
+    image Koizumi Think Ser4 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkSerious4.png", horizontal=True)
+    image Koizumi Think Grin1 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkGrin1.png", horizontal=True)
+    image Koizumi Think Grin2 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkGrin2.png", horizontal=True)
+    image Koizumi Think Sup1 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkSurprised1.png", horizontal=True)
+    image Koizumi Think Smile1 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkSmile1.png", horizontal=True)
+    image Koizumi Think Smile2 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkSmile2.png", horizontal=True)
+    image Koizumi Think Sigh1 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkSigh1.png", horizontal=True)
+    image Koizumi Think Sigh2 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkSigh2.png", horizontal=True)
+    image Koizumi Think Worry1 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkWorry1.png", horizontal=True)
+    
+    image Koizumi Think Casual Ser1 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkCasualSerious1.png", horizontal=True)
+    image Koizumi Think Casual Ser2 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkCasualSerious2.png", horizontal=True)
+    image Koizumi Think Casual Ser3 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkCasualSerious3.png", horizontal=True)
+    image Koizumi Think Casual Ser4 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkCasualSerious4.png", horizontal=True)
+    image Koizumi Think Casual Grin1 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkCasualGrin1.png", horizontal=True)
+    image Koizumi Think Casual Grin2 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkCasualGrin2.png", horizontal=True)
+    image Koizumi Think Casual Sup1 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkCasualSurprised1.png", horizontal=True)
+    image Koizumi Think Casual Smile1 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkCasualSmile1.png", horizontal=True)
+    image Koizumi Think Casual Smile2 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkCasualSmile2.png", horizontal=True)
+    image Koizumi Think Casual Sigh1 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkCasualSigh1.png", horizontal=True)
+    image Koizumi Think Casual Sigh2 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkCasualSigh2.png", horizontal=True)
+    image Koizumi Think Casual Worry1 Flip = im.Flip("Sprites/Koizumi/KoizumiThinkCasualWorry1.png", horizontal=True)
+    
     image Koizumi Crossed Hap1 Flip = im.Flip("Sprites/Koizumi/KoizumiCrossedHappy1.png", horizontal=True)
     image Koizumi Crossed Hap2 Flip = im.Flip("Sprites/Koizumi/KoizumiCrossedHappy2.png", horizontal=True)
     image Koizumi Crossed Ser1 Flip = im.Flip("Sprites/Koizumi/KoizumiCrossedSerious1.png", horizontal=True)
@@ -1287,8 +1480,6 @@ init:
     image Koizumi Crossed Sigh4 Flip = im.Flip("Sprites/Koizumi/KoizumiCrossedSigh4.png", horizontal=True)
     image Koizumi Crossed Neutral1 Flip = im.Flip("Sprites/Koizumi/KoizumiCrossedNeutral1.png", horizontal=True)
     image Koizumi Crossed Neutral2 Flip = im.Flip("Sprites/Koizumi/KoizumiCrossedNeutral2.png", horizontal=True)
-    
-    
     
     #Taniguchi Sprites
     image Taniguchi Grin1 = "Sprites/Taniguchi/TaniguchiGrin1.png"
@@ -1381,7 +1572,13 @@ init:
     image Sakanaka Unhap2 = "Sprites/Sakanaka/SakanakaUnhappy2.png"
     
     #Yamane Sprites
-    image Yamane Neutral = "Sprites/Yamane/YamaneLostCool.png"
+    image Yamane Lost Cool1 = "Sprites/Yamane/YamaneLostCool1.png"
+    image Yamane Lost Cool2 = "Sprites/Yamane/YamaneLostCool2.png"
+    image Yamane Grin1 = "Sprites/Yamane/YamaneGrin1.png"
+    image Yamane Grin2 = "Sprites/Yamane/YamaneGrin2.png"
+    image Yamane Grin3 = "Sprites/Yamane/YamaneGrin3.png"
+    image Yamane Terror1 = "Sprites/Yamane/YamaneTerror1.png"
+    image Yamane Terror2 = "Sprites/Yamane/YamaneTerror2.png"
     
     #Ryo Sprites
     image Ryo Ang1 = "Sprites/Ryo/RyoAngry1.png"
@@ -1407,11 +1604,84 @@ init:
     image Ryo Band Shifty3 = "Sprites/Ryo/RyoBandShifty3.png"
     image Ryo Band Sneer1 = "Sprites/Ryo/RyoBandSneer1.png"
     
+    image Ryo Ang1 Flip = im.Flip("Sprites/Ryo/RyoAngry1.png", horizontal=True)
+    image Ryo Ang2 Flip = im.Flip("Sprites/Ryo/RyoAngry2.png", horizontal=True)
     image Ryo Attack1 Flip = im.Flip("Sprites/Ryo/RyoAttack1.png", horizontal=True)
     image Ryo Attack2 Flip = im.Flip("Sprites/Ryo/RyoAttack2.png", horizontal=True)
+    image Ryo Grin1 Flip = im.Flip("Sprites/Ryo/RyoGrin1.png", horizontal=True)
+    image Ryo Grin2 Flip = im.Flip("Sprites/Ryo/RyoGrin2.png", horizontal=True)
+    image Ryo Neutral1 Flip = im.Flip("Sprites/Ryo/RyoNeutral1.png", horizontal=True)
+    image Ryo Shifty1 Flip = im.Flip("Sprites/Ryo/RyoShifty1.png", horizontal=True)
+    image Ryo Shifty2 Flip = im.Flip("Sprites/Ryo/RyoShifty2.png", horizontal=True)
+    image Ryo Shifty3 Flip = im.Flip("Sprites/Ryo/RyoShifty3.png", horizontal=True)
+    
     image Ryo Band Attack1 Flip = im.Flip("Sprites/Ryo/RyoBandAttack1.png", horizontal=True)
     image Ryo Band Attack2 Flip = im.Flip("Sprites/Ryo/RyoBandAttack2.png", horizontal=True)
         
+#Kimidori Sprites
+    image Kimidori Smile = "Sprites/Kimidori/KimidoriSmile.png"
+    image Kimidori Unhap = "Sprites/Kimidori/KimidoriUnhappy.png"
+    image Kimidori Sigh = "Sprites/Kimidori/KimidoriSigh.png"
+    image Kimidori Neutral = "Sprites/Kimidori/KimidoriNeutral.png"
+    image Kimidori Confused = "Sprites/Kimidori/KimidoriConfused.png"
+    
+    #Image Flips
+    image Kimidori Smile Flip= im.Flip("Sprites/Kimidori/KimidoriSmile.png", horizontal=True)
+    image Kimidori Unhap Flip = im.Flip("Sprites/Kimidori/KimidoriUnhappy.png", horizontal=True)
+    image Kimidori Sigh Flip = im.Flip("Sprites/Kimidori/KimidoriSigh.png", horizontal=True)
+    image Kimidori Neutral Flip = im.Flip("Sprites/Kimidori/KimidoriNeutral.png", horizontal=True)
+    image Kimidori Confused Flip = im.Flip("Sprites/Kimidori/KimidoriConfused.png", horizontal=True)
+    
+    
+#Shinobu Sprites
+    image Shinobu Hap1 = "Sprites/Shinobu/ShinobuHappy1.png"
+    image Shinobu Hap2 = "Sprites/Shinobu/ShinobuHappy2.png"
+    image Shinobu Neutral1 = "Sprites/Shinobu/ShinobuNeutral1.png"
+    image Shinobu Neutral2 = "Sprites/Shinobu/ShinobuNeutral2.png"
+    image Shinobu Neutral3 = "Sprites/Shinobu/ShinobuNeutral3.png"
+    image Shinobu Pain = "Sprites/Shinobu/ShinobuPain.png"
+    image Shinobu Pained = "Sprites/Shinobu/ShinobuPained.png"
+    image Shinobu Sad1 = "Sprites/Shinobu/ShinobuSad1.png"
+    image Shinobu Sad2 = "Sprites/Shinobu/ShinobuSad2.png"
+    image Shinobu Smile1 = "Sprites/Shinobu/ShinobuSmile1.png"
+    image Shinobu Sup1 = "Sprites/Shinobu/ShinobuSurprised1.png"
+    image Shinobu Sup2 = "Sprites/Shinobu/ShinobuSurprised2.png"
+    
+    image ShinBlush = "Sprites/Shinobu/ShinobuBlush.png"
+    
+    #Image flips
+    image Shinobu Hap1 Flip = im.Flip("Sprites/Shinobu/ShinobuHappy1.png", horizontal=True)
+    image Shinobu Hap2 Flip = im.Flip("Sprites/Shinobu/ShinobuHappy2.png", horizontal=True)
+    image Shinobu Neutral1 Flip = im.Flip("Sprites/Shinobu/ShinobuNeutral1.png", horizontal=True)
+    image Shinobu Neutral2 Flip = im.Flip("Sprites/Shinobu/ShinobuNeutral2.png", horizontal=True)
+    image Shinobu Neutral3 Flip = im.Flip("Sprites/Shinobu/ShinobuNeutral3.png", horizontal=True)
+    image Shinobu Pain Flip = im.Flip("Sprites/Shinobu/ShinobuPain.png", horizontal=True)
+    image Shinobu Pained Flip = im.Flip("Sprites/Shinobu/ShinobuPained.png", horizontal=True)
+    image Shinobu Sad1 Flip = im.Flip("Sprites/Shinobu/ShinobuSad1.png", horizontal=True)
+    image Shinobu Sad2 Flip = im.Flip("Sprites/Shinobu/ShinobuSad2.png", horizontal=True)
+    image Shinobu Smile1 Flip = im.Flip("Sprites/Shinobu/ShinobuSmile1.png", horizontal=True)
+    image Shinobu Sup1 Flip = im.Flip("Sprites/Shinobu/ShinobuSurprised1.png", horizontal=True)
+    image Shinobu Sup2 Flip = im.Flip("Sprites/Shinobu/ShinobuSurprised2.png", horizontal=True)
+    
+    image ShinBlush Flip = im.Flip("Sprites/Shinobu/ShinobuBlush.png", horizontal=True)
+    
+#Computer Club President Sprites
+    image CompPres Frown1 = "Sprites/ComputerClubPresident/CompClubPresFrown1.png"
+    image CompPres Frown2 = "Sprites/ComputerClubPresident/CompClubPresFrown2.png"
+    image CompPres Neutral1 = "Sprites/ComputerClubPresident/CompClubPresNeutral1.png"    
+    image CompPres Neutral2 = "Sprites/ComputerClubPresident/CompClubPresNeutral2.png"    
+    image CompPres Neutral3 = "Sprites/ComputerClubPresident/CompClubPresNeutral3.png"    
+    image CompPres Neutral4 = "Sprites/ComputerClubPresident/CompClubPresNeutral4.png"    
+    image CompPres Neutral5 = "Sprites/ComputerClubPresident/CompClubPresNeutral5.png"        
+    image CompPres Sigh1 = "Sprites/ComputerClubPresident/CompClubPresSigh1.png"        
+    image CompPres Sigh2 = "Sprites/ComputerClubPresident/CompClubPresSigh2.png"
+    
+    
+    
+    
+    
+    
+    
 #Thug Sprites
     image ThugHead 1 = "Sprites/Thug/ThugHead1.png"
     image ThugBody 1 = "Sprites/Thug/ThugBody1.png"
@@ -1671,7 +1941,59 @@ init:
     image title 009 = Text("{space=480}{b}{size=+1}Thursday, April 21, 2011{/size}{/b}\n\n\n\n\"File K:3453.3.5/2011.4.22\"\n\n\"...then push the stack representing the focus shift in prio research target. Due to the complexity of interaction with this particular model, an automated property will top your stack every two minutes if you do not pop or [[CLASSIFIED]. Do not attempt to adjust this; it is for your own safety! For the remainder of this lesson, you will need to utilize your augmented reality context-tags, or relay queries to me. Oh! And before this comes up? No, I will not ask [[CLASSIFIED] to autograph anything for you.\"\n\n\"[[CLASSIFIED]\" -- Peraea Mons T.E.S.A. Dataplume", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
     image title 010 = Text("{space=500}{b}{size=+1}Friday, April 22, 2011{/size}{/b}\n\n\n\n\"Chapter Two: Asking for Help\"\n\n\"Not everyone can handle an entire project single-handedly. Remember why you have allies in the first place! Achieving something on your own is great, but if the cost of failure is high, swallow your pride and spread the load around.\"\n\n\"Methods of Victory\" -- 'T.H.'", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
     image title 011 = Text("{space=500}{b}{size=+1}Friday, April 22, 2011{/size}{/b}\n\n\n\n\"Chapter Eight: Overbearing\"\n\n\"In a confrontation that is either physical or verbal, when possible, completely overwhelm your enemy from the outset. If it's a serious fight, there's no reason to hold back, no purpose to pulling punches. If it's not a serious fight, you're reading the wrong book!\"\n\n\"Methods of Victory\" -- 'T.H.'", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
-    
+    image title 012 = Text("{space=480}{b}{size=+1}Saturday, April 23, 2011{/size}{/b}\n\n\n\n\"Chapter Five: Disguises\"\n\n\"A good disguise is useful for infiltration, escape, or just plain taking a day off without being recognized. Care is required in selecting your disguise, of course, and going with your natural intuition for what disguise would serve you best is not always a good idea. Chances are, people who know you have a much better idea of what would make you look like someone else than you do - if they make a suggestion, think about it seriously.\"\n\n\"Cover\" - Author Unknown", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 013 = Text("{space=480}{b}{size=+1}Thursday, April 23, 2011{/size}{/b}\n\n\n\n\"Title: Admirable\"\n\n\"He says it is 'like'\n\"No absolute value, there\n\"A strange inference\n\n\"Understanding is not full\n\"But to call it 'like' and know\n\n\"Incomplete knowledge\n\"With partial understanding\n\"Yet still sufficient\"\n\n\"Snow, Verses: A Compilation\" - Committed to record: 2011.4.23", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 014 = Text("{space=500}{b}{size=+1}Monday, April 25, 2011{/size}{/b}\n\n\n\n\"File K:3419.8.19/2011.4.25\"\n\n\"Even as an observer, sometimes it's nice to be ignorant about some things. At least until after the fact. I suppose that doesn't sound very good, does it? Maybe I shouldn't record this...\"\n\n\"[[CLASSIFIED]\" - Paraea Mons T.E.S.A. Dataplume", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 015 = Text("{space=500}{b}{size=+1}Friday, April 29, 2011{/size}{/b}\n\n\n\n\"Chapter One: Threats and Allies\"\n\n\"Not every threat is physical. Really, it's the more subtle ones that are the scariest ... but maybe they shouldn't be. If you can't handle it yourself, and you're tired of running away (who wouldn't be!), then you need to find good allies and stick with them! At least, you'd have to find one really solid ally, and then make sure you're there for them enough so that they can be there for you too! It's not optional - so do it!\"\n\n\"Mirror, Mirror\" - T.K.", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 016 = Text("{space=480}{b}{size=+1}Saturday, April 30, 2011{/size}{/b}\n\n\n\n\"Chapter Two: More Training\"\n\n\"...so, yes, congratulations for finishing your first regimen successfully. But now that you've acquired those skills, you must retain them, while also refining new skills. The purpose of training is improvement, after all.\"\n\n\"Training and You: the Eternal Nightmare\" - Tadamichi Kyousuke", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 017 = Text("{space=480}{b}{size=+1}Wednesday, May 4, 2011{/size}{/b}\n\n\n\n\"Title: Relations\"\n\n\"Sun, sea, sky, river\n\"Energy links to matter\n\"Clearly connected\n\n\"Established by nature, not:\n\"Structures formed by consciousness\n\n\"'Family' networks\n\"Need not follow clear order\n\"Ghost, friend; relative\"\n\n\"Snow, Verses: A Compilation\" - Comitted to record:2011.5.5", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 018 = Text("{space=500}{b}{size=+1}Thursday, May 5, 2011{/size}{/b}\n\n\n\n\"Chapter One: Listen\"\n\n\"...but just in case you do need a reminder: You're reading this book because you're interested in the advice that other people can give! Written suggestions are great, but the most applicable wisdom you're probably going to get is going to be from the people around you; the ones who've done and seen it before! So, when they speak, listen.\"\n\n\"Methods of Victory\" - T.H.", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 019 = Text("{space=500}{b}{size=+1}Saturday, May 7, 2011{/size}{/b}\n\n\n\n\"Fragment: Clan Annals (unverified)\"\n\n\"Entry for 5.11.2011:\nThe laughter stopped, today; I ponder revenge. Would he be okay with that? \n- Tsu-Oyabun # 108\"\n\n\"[[Undecipherable]\" - Recovered From Primary T.E.S.A. Archive", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 020 = Text("{space=460}{b}{size=+1}Wednesday, May 11, 2011{/size}{/b}\n\n\n\n\"Chapter Four: Delegation\"\n\n\"...so that means, if you're leading, you have to lead. That sometimes means delegating things you can do yourself, so you can lead others. Don't get this mixed up with 'not getting your hands dirty'; you should be capable, but know when to let people better suited to handling the situation do so.\"\n\n\"Methods of Victory\" - T.H.", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 021 = Text("{space=480}{b}{size=+1}Thrusday, May 12, 2011{/size}{/b}\n\n\n\n\"Chapter Three: Friends and Enemies\"\n\n\"There's an old quote that goes, 'keep your friends close, and your enemies closer'. Personally, I think that's about the dumbest thing I've ever heard. Don't ignore your enemies, if you've got any, but at no point should your vision and focus be so clouded by anything that you forget to pay attention to your friends.\"\n\n\"Practical Heroism and You: Awareness\" - Tadamichi Kyousuke", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 022 = Text("{space=480}{b}{size=+1}Thursday, May 12, 2011{/size}{/b}\n\n\n\n\"Chapter Two: Fight or Flight\"\n\n\"Running away is just buying time, not solving a problem. You may not be able to solve every problem on your own, but if you just run from everything ... then you never solve anything at all.\"\n\n\"Mirror, Mirror\" - T.K.", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 023 = Text("{space=500}{b}{size=+1}Friday, May 13, 2011{/size}{/b}\n\n\n\n\"Chapter Five: So, You Got Away\"\n\n\"Are you sure? I mean, really, really, really sure? It could just be the calm before the storm, as they say. Check, double-check, check again, and then, once you're done, don't get overconfident or cocky.\"\n\n\"Clearing the Event Horizon: How Close is Too Close?\" - Tadamichi Kyousuke", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 024 = Text("{space=500}{b}{size=+1}Monday, May 16, 2011{/size}{/b}\n\n\n\n\"Fragment: Clan Annals (unverified)\"\n\n\"Entry for 5.16.2011:\nCivility is the prized, fading, heart of proper criminals. But there's this bad impression that somehow, it just won't work as neatly as it feels it should have.\n- Tsu-Oyabun # 108\"\n\n\"[[Undecipherable]\" - Recovered From Primary T.E.S.A. Archive", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 025 = Text("{space=500}{b}{size=+1}Monday, May 16, 2011{/size}{/b}\n\n\n\n\"File K:3453.3.1/2011.4.17\"\n\n\"I probably raised more questions than answers. Maybe that's for the best, though? An inquisitive mind is a prepared mind, and that's desirable ... I think... But, saying that, I have the impression that he understands the situation better than I do, ultimately. Why would that be?\"\n\n\"[[CLASSIFIED]\" - Paraea Mons T.E.S.A. Dataplume", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 026 = Text("{space=500}{b}{size=+1}Sunday, April 17, 2011{/size}{/b}\n\n\n\n\"Chapter Two: The Showy Entrance\"\n\n\"Don't underestimate it! The dramatic, dynamic, explosive entrance - if you can pull it off - may actually allow you to avoid combat. It could also make you look really silly if you flub it. Find a smooth blend of action to showmanship, dependant on the situation. Flying kicks are all well and good, but sometimes, a straight punch is really dynamic enough.\"\n\n\"The Last Resort: Violence and You\" - Tadamichi Kyousuke", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 027 = Text("{space=480}{b}{size=+1}Tuesday, May 17, 2011{/size}{/b}\n\n\n\n\"Title: Connected\"\n\n\"Undetected routes\n\"Bridging the distance between\n\"You, and you, and I\"\n\n\"Snow, Verses: A Compilation\" - Committed to record: 2011.5.18", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 028 = Text("{space=480}{b}{size=+1}Thursday, May 19, 2011{/size}{/b}\n\n\n\n\"Fragment: Clan Annals (unverified)\"\n\n\"Entry for 5.19.2011:\nSometimes, just sometimes ... being a slave to tradition has its perks. And those can make it worth it the rest of the time.\n- Tsu-Oyabun # 108\"\n\n\"[[Undecipherable]\" - Recovered From Primary T.E.S.A. Archive", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 029 = Text("{space=500}{b}{size=+1}Friday, May 20, 2011{/size}{/b}\n\n\n\n\"File K:3419.8.19/2011.5.20\"\n\n\"Selfishness in small degrees may be okay, but breaking the [[CLASSIFIED] is right out. So how is it possible that someone could use [[CLASSIFIED], cross their own temporal path, and interfere so incautiously? Wouldn't any T.E.S.A. official or [[CLASSIFIED] monitor for it in advance? Unless ... somehow ... such a thing were pre-determined? But if rules like that can be, well, not broken, but bent...\"\n\n\"[[CLASSIFIED]\" - Paraea Mons T.E.S.A. Dataplume", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 030 = Text("{space=500}{b}{size=+1}Friday, May 21, 2011{/size}{/b}\n\n\n\n\"Chapter Three: Strike While the Iron is Hot\"\n\n\"Living explosion-to-explosion is all well and good, but remember that you should be living, not just surviving. There is a difference. So, for better or worse, recognize when you can steal a moment to relax, and do it. If such moments cannot be found, on occasion, you must make them.\"\n\n\"Roll With the Punches\" - Tadamichi Kyousuke", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 031 = Text("{space=480}{b}{size=+1}Saturday, May 21, 2011{/size}{/b}\n\n\n\n\"Chapter Four: Capability\"\n\n\"Of particular concern is the possibility that you project an image that is too confident for your ability, and then are called upon to do something you are not qualified or capable of doing. It's better to be underestimated than overestimated, in the long term. Otherwise, you're just bluffing, and when the bluff is called...\"\n\n\"Cover\" - Author Unknown", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 032 = Text("{space=480}{b}{size=+1}Saturday, May 21, 2011{/size}{/b}\n\n\n\n\"Title: Fallible\"\n\n\"A mistake is made,\n\"errors perpetuated:\n\"personal failure.\n\n\"Apology is denied;\n\"judgment, refused.\n\n\"His analysis:\n\"'it's fine, no one is perfect';\n\"a comforting thought.\"\n\n\"Snow, Verses: A Compilation\" - Committed to record: 2011.5.21", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 033 = Text("{space=500}{b}{size=+1}Sunday, May 22, 2001{/size}{/b}\n\n\n\n\"Chapter Ten: Loyalty\"\n\n\"The thing is to remember that loyalty is earned, not just given. And if you want to be given loyalty, you tend to need to earn it. If you've already done that, just make sure you deserve that loyalty!\"\n\n\"Methods of Victory\" - 'T.H.'", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 034 = Text("{space=480}{b}{size=+1}Tuesday, May 24, 2011{/size}{/b}\n\n\n\n\"Chapter Three: Field Training\"\n\n\"Once you've established your basic level of competence, there's nothing to remind you of how far you have to go quite like trying to do something by yourself.\"\n\n\"Training and You: The Eternal Nightmare\" - Tadamichi Kyousuke", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 035 = Text("{space=480}{b}{size=+1}Thursday, May 26, 2011{/size}{/b}\n\n\n\n\"Chapter Seven: Gaining Strength\"\n\n\"When you devote yourself to getting stronger and more able to do things ... don't forget to practice being careful with your new powers, too...\"\n\n\"Mirror, Mirror\" - T.K.", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 036 = Text("{space=500}{b}{size=+1}Sunday, May 29, 2011{/size}{/b}\n\n\n\n\"Chapter Three: Reliability\"\n\n\"Ideally, you'll know what everyone who answers to you is reliable for, and what the people who depend on you rely on. Everyone has different strengths, after all!\"\n\n\"Methods of Victory\" - 'T.H.'", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 037 = Text("{space=500}{b}{size=+1}Monday, May 30, 2011{/size}{/b}\n\n\n\n\"Chapter Four: The Words You Didn't Want to Hear\"\n\n\"Occasionally, the stability of your environment and circumstances may become compromised by new information that has always been true, simply unknown. Whatever action you take in response, information control and caution are your watchwords. No matter how bad that makes you feel.\"\n\n\"Clearing the Event Horizon: How Close is Too Close?\" - Tadamichi Kyousuke", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 038 = Text("{space=500}{b}{size=+1}Monday, May 30, 2011{/size}{/b}\n\n\n\n\"Chapter Four: The Ambush (II)\"\n\n\"...effectively, this is going to work just like the last chapter, except this time, the other guy gets all the advantages. I can guess what you're thinking, but this is actually even less fun than it sounds. As mentioned in the opening chapter of the previous book in this series, Roll With the Punches...\"\n\n\"The Last Resort: Violence and You\" - Tadamichi Kyousuke", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 039 = Text("{space=460}{b}{size=+1}Wednesday, June 1, 2011{/size}{/b}\n\n\n\n\"Chapter Nine: Reciprocation\"\n\n\"Sometimes, it may feel like there's nothing you can do to pay back the people who help you. But if they want to help you, they're your friends - so just do your best for them, like they do for you!\"\n\n\"Mirror, Mirror\" - T.K.", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 040 = Text("{space=460}{b}{size=+1}Wednesday, June 1, 2011{/size}{/b}\n\n\n\n\"Title: Unity\"\n\n\"A strange agenda\n\"with the hopeful result that\n\"'they' become 'we'.\n\n\"Factors are concealed from him;\n\"Does subtrefuge belong here?\"\n\n\"Snow, Verses: A Compilation\" - Committed to record: 2011.6.1", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 041 = Text("{space=500}{b}{size=+1}Thursday, June 2, 2011{/size}{/b}\n\n\n\n\"Chapter Two: Don't Just SAY You Have a Bad Feeling, DO Something About It!\"\n\n\"...but I digress. When you get that feeling, you know the one, in the back of your head? The one that makes you think something is off about the situation? It may be right. Granted, you may also be tumbling headlong into a fit of paranoia that will end terribly for you and everyone you love. But what if you're NOT? Remember, if you're aware of things, you know most people think you're crazy anyway. Is it going to hurt that much more to overreact rather than just label something a false alarm?\"\n\n\"Practical Heroism and You: Awareness\" — Tadamichi Kyousuke", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 042 = Text("{space=500}{b}{size=+1}Thursday, June 2, 2011{/size}{/b}\n\n\n\n\"Entity One: Analysis\"\n\n\"In order to function in your new environment, be sure to follow all of your new interaction cues; these encourage behaviors that will be useful later. At the same time, be watchful for 'noise' input, or interactions which it is best to disregard as useful for integration.\"\n\n\"Adaptation\" - LP-K:AR Datastream Segment (-working translation-)", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 043 = Text("{space=500}{b}{size=+1}Monday, June 6, 2011{/size}{/b}\n\n\n\n\"Chapter Seven: Walking Into the Trap\"\n\n\"To put it simply, as you know you are walking into a trap, any time you feel very confident about your ability to handle it is the ideal time to reconsider.\"\n\n\"Roll With the Punches\" - Tadamichi Kyousuke", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 044 = Text("{space=500}{b}{size=+1}Monday, June 6, 2011{/size}{/b}\n\n\n\n\"Chapter One: Faith\"\n\n\"Faith is an odd thing, insofar as the idea is entirely unscientific, yet simultaneously, so vastly appealing. Is it some missed quirk of evolution, imbuing us with something we do not need? Or is that egotism, and it's foolish to think we've evolved beyond whatever gifts this idea has to offer us so soon? Drawing from Pascal's Wager ... does the risk of having faith outweigh the reward?\"\n\n\"Tending the Flame\" - [[The author's name has been charred from the document]", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 045 = Text("{space=500}{b}{size=+1}Saturday, June 4, 2011{/size}{/b}\n\n\n\n\"First Chorus: Scale\"\n\n\"The smallest orbits are string that spin; the largest are perfect circles. Between, memetic structures orbit in a profound variety of minute differences, invisible from both the smallest and the largest perspectives. A wide harmonic band with the potential to carry a multitude of frequencies that do not escape observation, but are still difficult to perceive from within.\"\n\n\"Perspective\" - LP-MK:SK Memetic String (-working translation-)", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 046 = Text("{space=500}{b}{size=+1}Monday, June 6, 2011{/size}{/b}\n\n\n\n\"Chapter Three: Foundations\"\n\n\"At the end of the day, if you've nothing beneath your pretenses, then when they're swept away, there's nothing left. If that happens, the only thing left to rely on are your alliances and friendships ... so make sure that your masks don't put so much distance between you that they won't do it.\"\n\n\"Cover\" - Author Unknown", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 047 = Text("{space=500}{b}{size=+1}Tuesday, June 7, 2011{/size}{/b}\n\n\n\n\"Chapter Twelve: Limitations\"\n\n\"Sometimes, if you want something done right, you have to do it yourself. Sometimes, though, it's good to admit that the 'hands-on' approach may not be the best way to go. Overconfidence leads to many problems, so be sure you know where you really stand.\"\n\n\"Methods of Victory\" -- 'T.H.'", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 048 = Text("{space=500}{b}{size=+1}Tuesday, June 7, 2011{/size}{/b}\n\n\n\n\"Second Chorus: Intensity\"\n\n\"Intensity is a measure that can indicate when scale has slipped control and the force being applied to the situation has exceeded or diminished beyond the proper volumes. Misunderstanding this can have severe repercussions.\"\n\n\"Perspective\" -- LP-MK:SK Memetic String (-working translation-)", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 049 = Text("{space=500}{b}{size=+1}Tuesday, June 7, 2011{/size}{/b}\n\n\n\n\"Fragment: Clan Annals (unverified)\"\n\n\"Entry for 6.7.2011: \nThere's something rewarding about being able to pass wisdom down to someone who reminds you so much of yourself at their age.... \n-- Tsu-Oyabun # 108\"\n\n\"[[Undecipherable]\" -- Recovered From Primary T.E.S.A. Archive", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 050 = Text("{space=500}{b}{size=+1}Tuesday, June 7, 2011{/size}{/b}\n\n\n\n\"Chapter Eight: Information Control\"\n\n\"Careful release of information, both true and false, can be a powerful tool in maneuvering the actions of others, both friend and foe. An important point to remember, however, is that once that information is out of your control, it can turn on you in ways you don't expect.\"\n\n\"Cover\" -- Author Unknown", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 051 = Text("{space=480}{b}{size=+1}Thursday, June 9, 2011{/size}{/b}\n\n\n\n\"Chapter Twelve: Moderation\"\n\n\"It really is possible to have too much of a good thing. Don't add too much fuel to the fire, unless you're prepared to deal with the consequences....\"\n\n\"Tending the Flame\" -- [[The author's name has been scratched out here]", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 052 = Text("{space=500}{b}{size=+1}Friday, June 10, 2011{/size}{/b}\n\n\n\n\"Entity Two: Sympathy\"\n\n\"When subjected to a system for observation, it is impossible to observe without having influence on it. Conversely, observations will also have influence over the observer. Sympathy does not exist to be observed alone without participation.\"\n\n\"Adaptation\" -- LP-TK:AR Datastream Segment (-working translation-)", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 053 = Text("{space=480}{b}{size=+1}Saturday, June 11, 2011{/size}{/b}\n\n\n\n\"Fragment: Clan Annals (unverified)\"\n\n\"Entry for 6.12.2011:\nIt is tragically easy to do harm when good is intended; a bridge built is easily burned. Hopefully, this gap can be mended.... \n-- Tsu-Oyabun # 108\"\n\n\"[[Undecipherable]\" -- Recovered From Primary T.E.S.A. Archive", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 054 = Text("{space=500}{b}{size=+1}Sunday, June 12, 2011{/size}{/b}\n\n\n\n\"Chapter Five: Owning Up\"\n\n\"No one is perfect. No one at all! If you think you're an exception, put this book down and read something else! When you make a mistake -- and you will -- don't bother trying to deny it or smooth it over. Just admit it and do your best to fix it. After all, if you're leading by example, how would you like the people who look up to you to behave?\"\n\n\"Methods of Victory\" -- 'T.H.'", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 055 = Text("{space=460}{b}{size=+1}Wednesday, June 15, 2011{/size}{/b}\n\n\n\n\"Chapter Two: Trust\"\n\n\"Like the previous subject -- faith -- trust is a concept that can have significant impact on your perceptions. Trust is probably easier to establish than faith, as it's something you can apply to people you know instead of vague concepts. At the same time, you can both 'have faith' in someone and 'trust' someone. However, the truth of the matter is that they are not the same thing; you can trust someone you have no faith in. Except ... if you do, and it's rewarded enough ... does that trust become faith?\"\n\n\"Tending the Flame\" -- [[The author's name is too faded from age to be read]", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 056 = Text("{space=460}{b}{size=+1}Wednesday, June 15, 2011{/size}{/b}\n\n\n\n\"Title: Unseen\"\n\n\"Every burden;\n\"he would carry them alone.\n\"But we are here too.\"\n\n\"Snow, Verses: A Compilation\" -- Committed to record:2011.6.16", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 057 = Text("{space=480}{b}{size=+1}Thursday, June 16, 2011{/size}{/b}\n\n\n\n\"Chapter Eight: The Limits of Responsibility\"\n\n\"Realistically, while you always need to do your best, there are moments when the right thing to do is nothing. That doesn't mean 'idly stand by' -- you have to be there for your friends -- but sometimes people can handle their own problems, and it's best to let them do that.\"\n\n\"Practical Heroism and You: Awareness\" -- Tadamichi Kyousuke", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 058 = Text("{space=500}{b}{size=+1}Friday, June 17, 2011{/size}{/b}\n\n\n\n\"Chapter Three: Conflicts\"\n\n\"When you trust someone, and they ask you to believe something you cannot, there is a conflict. The solution isn't to put one over the other, but to take both in stride. Keep your own beliefs in mind, but give those you trust the benefit of the doubt. You've already decided they were trustworthy, haven't you?\"\n\n\"Tending the Flame\" -- [[the author's name is illegible due to a streak of ash]", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 059 = Text("{space=500}{b}{size=+1}Friday, June 17, 2011{/size}{/b}\n\n\n\n\"Chapter Three: Understanding and Perspective\"\n\n\"It's easy when you're overwhelmed to feel alone. But there's a good chance that there's someone out there that understands what you've been through, better than you might believe was possible! This person could be a friend, or an ally, and they could be easy to miss! But they might know what you've been through better than you can think -- so if you find someone like that, listen to their words closely!\"\n\n\"Mirror, Mirror\" -- T.K.", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 060 = Text("{space=480}{b}{size=+1}Saturday, June 18, 2011{/size}{/b}\n\n\n\n\"Chapter Six: Discretion\"\n\n\"...at times this may result in having information that is difficult to explain in a considerate or pleasant manner. While there may be something for bluntness when required, knowing when to bite your tongue and wait for the right moment is not without its benefits, either.\"\n\n\"Cover\" -- Author Unknown", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 061 = Text("{space=500}{b}{size=+1}Sunday, June 19, 2011{/size}{/b}\n\n\n\n\"Third Chorus: Focus\"\n\n\"Carrier waves projecting memetic information on a wide spectrum abound and can easily become overwhelming, even with persistent observation. The inherent limitations of this can be bypassed by restricting attention to harmonic resonances beyond the most critical elements within the observational scope.\"\n\n\"Perspective\" -- LP-MK:SK Memetic String (-working translation-)", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 062 = Text("{space=500}{b}{size=+1}Sunday, June 19, 2011{/size}{/b}\n\n\n\n\"Fragment: Clan Annals (unverified)\"\n\n\"Entry for 7.19.2011 (the second time): \n...though when I think about how funny this entry in the log will look, I realize it's got to be a lot less fun for her. On the other hand, with a safety net of good friends, and of course, him, that blow should be softened a bit, right?\n -- Tsu-Oyabun # 108\"\n\n\"[[Undecipherable]\" -- Recovered From Primary T.E.S.A. Archive", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+    image title 063 = Text("{space=500}{b}{size=+1}Monday, June 20, 2011{/size}{/b}\n\n\n\n\"Chapter Six: Falling Down\"\n\n\"As much as clever little idioms about 'screwing up and relying on your friends to get through things' suck, they do kind of have a point. But there's no real reason to wrap it up and treat it better than it deserves. It's terrible, it sucks, and if you think you'll never have to deal with it, it'll be that much harder for you to handle when you do. I guess what I'm trying to say is: pride is its own punishment, ultimately.\"\n\n\"Methods of Victory\" -- 'T.H.'", font="DejaVuSerif-Italic.ttf", size=18, line_leading=3, justify=True, xmaximum=750)
+
 init python:
     config.layers.insert(1, 'upper')
     
@@ -1704,7 +2026,7 @@ init python:
     config.empty_window = nvl_show_core
     config.window_hide_transition = dissolve
     config.window_show_transition = dissolve
-    renpy.music.set_volume(0.4, .5, channel="music")
+#    renpy.music.set_volume(0.4, .5, channel="music")
     flashbulb = Fade(0.2, 0.0, 0.8, color='#fff')
     slowflashbulb = Fade(1.0, 0.5, 2.0, color='#fff')
     slowdissolve = Dissolve(1.0)
@@ -1750,10 +2072,10 @@ init python:
     sshake = Shake((0, 0, 0, 0), 1.0, dist=30)
     
     # Viewport adjustements. Each screen needs its own adj!
-    adj = ui.adjustment()
-    adjttn = ui.adjustment()
-    adjTC = ui.adjustment()
-    adjAch = ui.adjustment()
+    # adj = ui.adjustment(adjustable = True)
+    # adjttn = ui.adjustment()
+    # adjTC = ui.adjustment()
+    # adjAch = ui.adjustment()
     
     music_need = True
     ecbg = "black"
@@ -1805,12 +2127,22 @@ init python:
                         what_layout="subtitle", what_xalign=0.5, what_text_align=0.5,
                         window_background=None, window_yminimum=0, window_xfill=False, 
                         window_xalign=0.5, window_yalign=0.5) 
-                        
+    
+    ## Filraen's note: this is for allowing personal use of left Alt-Tab, as someone else
+    ## said once he used Alt instead of Cntrl to skip (forgot who)
+    filraen = False
+    try:
+        with open(r"C:\Users\Alex\.gitconfig", "r") as outfile:
+            filraen = True
+    except IOError:
+        pass
+    
     if config.developer:
-        config.keymap['skip'].remove('K_LCTRL')
-        config.keymap['skip'].remove('K_RCTRL')
-        config.keymap['skip'].append('K_LALT')
-        config.keymap['skip'].append('K_RALT')
+        if not filraen:
+            config.keymap['skip'].remove('K_LCTRL')
+            config.keymap['skip'].remove('K_RCTRL')
+            config.keymap['skip'].append('K_LALT')
+            config.keymap['skip'].append('K_RALT')
         config.keymap['reload_game'].append('r')
         config.keymap['inspector'].append('i')
         config.keymap['developer'].append('d')
@@ -2008,6 +2340,7 @@ init -1 python:
         [   ("Heroic Antics Begin Arc - 2", "", False),
             ("Chapter Ten: School of Hard Knocks", "HAB3", True),
             ("Chapter Eleven: Yeah, It Went There", "HAB4", True),
+            ("Chapter Twelve: The Multi-Mook Melee", "HAB5", True),
         ],
         [
             ("Label a scene you're working on test and use this", "Test", True),
@@ -2365,8 +2698,11 @@ label Preview2:
 
 # White eyecatch routine with two dates to show, second replacing first. Default
 # values are a wonderful thing.
-label eyecatch_fancy(date1="", date2=date1, pause_time=3.0, r=0, ecbg="black"):
+label eyecatch_fancy(date1="", date2="", pause_time=3.0, r=0, ecbg="black"):
     #scene eyebg with Dissolve(1)
+    python:
+        if date2 == "":
+            date2 = date1
     $ nw = _window
     $ _window = False
     $ date1 = "\n\n\n\n" + date1

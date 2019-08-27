@@ -53,6 +53,7 @@ label HAB1:
     show Kanae Sad4
     show Ryo Band Ang1
     "At this point, all of the surrounding students had stopped moving, turning attention to the pair. "
+    $ _window = True
     show Kanae Sad4 at TenthRight with move
     extend "Kanae backed up a few steps anxiously, {nw}"
     show Ryo Band Ang1 at HalfLeft with move
@@ -71,6 +72,7 @@ label HAB1:
         linear 0.4 yalign 3.0
     play sound "SE/Thump1.wav"
     extend "and brought her down to the hallway floor. {w}She whimpered, her lunch spilling out of her bento all across the walkway, while more students crowded around. "
+    $ _window = False
     show Kanae Wince2:
         xalign 0.25 yalign 3.0
         linear 0.8 yalign 1.0
@@ -83,7 +85,9 @@ label HAB1:
     show Ryo Band Ang1
     play music "Music/Hostiles.mp3"
     "\"You,\" a voice spat, using the rudest, most informal form of the word. "
+    $ _window = True
     show Kyon Unhap4 at right with moveinright
+    $ _window = False
     extend "The boy dragging her stilled, tightening his grip on her wrist as her sempai strode across the messy remnants of her lunch, eyes narrowed in annoyance. {nw}"
     show Kyon Ang2
     extend "\"Let her go.\""
@@ -132,13 +136,14 @@ label HAB1:
     with fast_move
     show Kyon Unhap1
     play sound "SE/impact.mp3"
+    $ _window = True
     "With a sudden growl, the boy released her wrist and shoved her towards her sempai, hard. {nw}"
     show Kyon Unhap1:
         xalign 1.15 yalign 1.0
     show Kanae Wince2:
         xalign 0.85 yalign 1.0
     with fast_move
-    extend "{w}Her sempai rolled back on his feet, both arms going about her as he flung himself backwards, {nw}"
+    extend "{w=0.5}Her sempai rolled back on his feet, both arms going about her as he flung himself backwards, {nw}"
     show Ryo Band Attack1 Flip
     show Kyon Unhap6 Flip:
         xalign 0.85 yalign 1.0
@@ -152,11 +157,12 @@ label HAB1:
         xalign 2.0 yalign 3.0
     with move
     play sound "SE/slide.wav"
-    extend "He landed in a slide, "
+    extend "He landed in a slide, {nw}"
     show Kyon Unhap5:
         xalign 1.15 yalign 1.25
     with fast_move
     extend "releasing her and then rolling to his feet in a single smooth motion, crouching just over her head while the crowd around gasped quietly."
+    $ _window = False
     nvl clear
     show Kyon Unhap2
     "\"Kanae-chan,\" he said, not looking at her, \"are you okay?\""
@@ -167,8 +173,9 @@ label HAB1:
     "He nodded, then straightened up, stepping towards the middle of the hallway, his eyes locked on the other boy. \"Alright, you,\" he said, using the derogatory 'kisama' again, \"what the hell is your problem?\""
     nvl clear
     show Kyon Unhap4
-    "The other boy growled, then surged forward, swinging a powerful punch towards her sempai. "
+    "The other boy growled, then surged forward, swinging a powerful punch towards her sempai. {nw}"
     play sound "SE/lowswoosh.mp3"
+    $ _window = True
     show Ryo Band Attack2 Flip at center with fast_move
     show Kyon Unhap5 Flip at HalfLeft with fast_move
     show Ryo Band Attack1 at HalfRight with move:
@@ -176,15 +183,19 @@ label HAB1:
         xpos 0.5 ypos 1.0
         linear 0.4 rotate 90 
     play sound "SE/Thump1.wav"
+    $ _window = False
     extend "He leaned to one side, seizing the thug's extended fist and spinning, turning all of the larger boy's force into forward momentum, flipping him completely upside-down before slamming to the floor on his back in the scattered bits of her lunch. "
     show Kyon Unhap5 Flip at TenthLeft with fast_move
     hide Ryo
-    extend "Her sempai danced away a half-step, light on his feet, hands loosely at his sides. "
+    nvl clear
+    "Her sempai danced away a half-step, light on his feet, hands loosely at his sides. {nw}"
+    $ _window = True
     show Kanae Sup1:
         xalign 0.85 yalign 1.0
     with fast_move
     extend "Kanae quickly hopped to her feet and scurried away. {nw}"
     hide Kanae with moveoutright
+    $ _window = False
     extend "Almost immediately she found herself contained in a protective circle of the girls standing on the sidelines, people she didn't know offering murmurs of sympathy and asking if she was okay. She tried not to laugh or cry at the absurdity of the situation."
     nvl clear
     "So far, only her pride and her lunch had been lost."
@@ -206,6 +217,7 @@ label HAB1:
     "Shifting his shoulders, her sempai gave a terse nod and clenched one hand into a fist tightly, the crackling, snapping noises from his tendons clearly audible in the hallway. {nw}"
     show Kyon Ser2 Flip
     extend "\"Good,\" he judged. \"Now see that this never happens again.\" "
+    nvl clear
     show Kyon Ser1 Flip:
         xalign -0.25 yalign 1.0
     show Ryo Band Shifty2:
@@ -213,7 +225,7 @@ label HAB1:
     show Kanae Unhap3 at right
     with dissolve
     show Kyon Ser1 Flip at HalfRight with move
-    extend "He relaxed his stance and turned to Kanae; her protective circle backed away seamlessly to let him approach her, the other girls looking at him with shy smiles or bashful grins. {nw}"
+    "He relaxed his stance and turned to Kanae; her protective circle backed away seamlessly to let him approach her, the other girls looking at him with shy smiles or bashful grins. {nw}"
     show Kyon Ser3 Flip
     extend "\"You're certain you're okay?\" he asked, putting one hand on her shoulder and focusing his full attention on her, seemingly unaware of the other students."
     nvl clear
@@ -238,18 +250,21 @@ label HAB1:
         xalign 0.95 yalign 5.0
     show Kanae Unhap1
     "With speed she didn't think was possible, her sempai snapped his head back and threw himself to the floor, a potentially lethal stab to the side of the head reduced to a short, shallow scratch on one cheek. "
+    $ _window = True
     show Ryo Band Attack1 Flip:
         xalign 0.7 yalign 1.0
     with move
-    extend "Rolling with the momentum of his evasion, her sempai quickly righted himself and lunged, {nw}"
+    "Rolling with the momentum of his evasion, her sempai quickly righted himself and lunged, {nw}"
     show Kyon Unhap5 at HalfLeft
     show Kcut Fresh1 behind Ryo at HalfLeft
     with fast_move
     show Ryo Band Sneer1:
         xalign 0.7 yalign 1.0
         linear 0.1 xalign 0.5
+    $ _window = False
     extend "grabbing the other boy's wrist and yanking him violently backwards, just as he reached for Kanae again."
     nvl clear
+    $ _window = True
     show Kanae Wince1
     show Kyon Unhap5 Flip:
         xalign 0.25 yalign 1.0
@@ -282,6 +297,7 @@ label HAB1:
         xalign 0.1 yalign 1.0    
     with move
     hide Ryo
+    $ _window = False
     extend "sending it clattering across the hallway through her ruined lunch, the uneasy silence of the surrounding students punctuated with a sickening crunch. The other boy howled, clutching his injured hand in agony and rolling around on his back, tears streaming from his eyes."
     nvl clear
     show Kyon Ser2 Flip
@@ -317,9 +333,9 @@ label HAB1:
     $ renpy.layer_at_list([PanScene_LeftToRight])
     "\"Ah,\" Tsuruya said, her smile vanishing. \"Well, he had that cut yesterdays, so that's not your fault,\" she assured the smaller girl. \"Really, I'm the one who needs to apologize! If I weren't borrowing Kyon-kun, they wouldn't have thought that you'd be a target!\" She rose from her seat and gave a full ninety degree bow to Kanae. \"I'm sorry,\" she added."
     nvl clear
-    $ renpy.layer_at_list([PanScene_RightToLeft])
     show Kanae Sad5
     show Koizumi Sigh2
+    $ renpy.layer_at_list([PanScene_RightToLeft])
     "\"A share of the blame is mine, as well,\" Koizumi added, grimacing. \"We are supposed to be watching over Michikyuu-san ... but obviously, we missed this.\""
     show Koizumi Sigh4
     show YBook at TopRight with dissolve
@@ -416,102 +432,108 @@ label HAB1:
     hide MBlush
     with moveoutright
     "She gave a hesitant nod and dashed down the hall to the classroom in question, shooting a worried glance over her shoulder at him. {nw}"
+    $ _window = True
     show Tsuruya Wave Hap1 at left with moveinleft
+    stop music fadeout 1
+    play music "Music/suspicion.ogg"
+    $ _window = False
     extend "Just as she vanished from sight, Tsuruya finished her own dash up the stairs into the clubroom corridor, her eyes widening excitedly. \"Kyon-kun,\" she caroled, but in a quiet voice, drawing out the honorific. \"Hey, hey, would it be okay if I borrowed you a bit for helps with my investigation?\""
     nvl clear
-    show Tsuruya Sup1
+    show Tsuruya Sup1 Flip
     "She blinked suddenly, pausing to stare his cheek, then frowned sharply. \"Ooh, you better come with me, first of all,\" she decided, seizing his wrist and leading him back into the school. {nw}" 
-    scene bg LockersDayLeft with fade
-    show Tsuruya Smile2 at left with dissolve
+    $ _window = True
+    scene bg LockersDayLeft with wiperight
+    show Tsuruya Smile2 Flip at left with dissolve
+    $ _window = False
     extend "He followed in bemusement until they reached her locker and she produced a first aid kit, cleaning his wound and then applying a bandage."
     nvl clear
-    show Tsuruya Hap1 with None
+    show Tsuruya Hap1 Flip with None
     show Kyon Smile4 at right
     show Kcut Bandage at right
     with dissolve
     "\"There,\" she said, once her treatment was done, grinning again. There was a twinkle in her eyes as she added, \"Don't get a scar, unless you gets another one to make it cross-shaped. That makes you way more rugged and bish!\""
-    show Tsuruya Smile3
+    show Tsuruya Smile3 Flip
     show Kyon Smile6
     "\"Yeah, that's not the part I'm worried about,\" he said, smirking, though the expression vanished the moment his cheek pulled at the cut. {nw}"
     show Kyon Neutral2
     extend "\"Anyway, Haruhi won't mind me helping you out; I've been dismissed from club activities today.\""
     nvl clear
     show Kyon Neutral3
-    show Tsuruya Hap5
-    stop music fadeout 1
-    play music "Music/suspicion.ogg"
+    show Tsuruya Hap5 Flip
     "\"Oh! Perfects! We can keep on with our investigation!\" Tsuruya said excitedly, glancing around to make sure that no one was within eavesdropping distance."
-    show Tsuruya Grin4
+    show Tsuruya Grin4 Flip
     "\"Okies, here's what I've found out so far ... those pushy fellows from Sunday, they have a contact in the school, a third year named Ryuguu Ryo-san. He loiters around on the campus behind the gym after school to make his deals. I want to questions him, but he's a big fellow, and Kasai's out ... so if you don't minds, could you be my muscle for a bit?\""
     nvl clear
-    show Tsuruya Grin2
+    show Tsuruya Grin2 Flip
     show Kyon Ser3      
     "\"Sure,\" Kyon agreed, realizing that the boy he had just fought with (from his perspective) must have been Ryuguu. Well, the informal 'you' would still serve for him. \"So, any plan? Maybe a little good cop, bad cop?\""
-    show Tsuruya Hap1
+    show Tsuruya Hap1 Flip
     show Kyon Ser1
     "Tsuruya giggled, leading the way to the shoe lockers and changing. Kyon checked his locker, but of course, the only shoes there were yesterday's indoor shoes."
-    nvl clear
     show Kyon Sigh3
     "\"I should have remembered that,\" he grumbled to himself. " 
+    nvl clear
     scene bg SchoolOutside with fade
-    extend "Shaking his head, he followed Tsuruya out of the school building and around to the gym, to the shady side where the physical education storage outbuildings were. The stereotypical location for illicit romances within the school, delinquents hiding out...."
-    show Tsuruya Ser1 at left with dissolve
+    "Shaking his head, he followed Tsuruya out of the school building and around to the gym, to the shady side where the physical education storage outbuildings were. The stereotypical location for illicit romances within the school, delinquents hiding out...."
+    show Tsuruya Ser1 Flip at left with dissolve
     nvl clear
     "\"Now, I don't know Ryuguu-san, because we don't share a class together,\" Tsuruya warned in a whisper, \"but how many people are there hanging out around here?\""
     nvl clear
-    hide Tsuruya Ser1 with dissolve
+    hide Tsuruya with dissolve
     show Ryo Neutral1 at center with dissolve
     "It took a moment, but Kyon was able to pick out the boy in question, somewhat unfamiliar without tape across his nose and one eye blackened. \"That's him,\" Kyon told her with a nod. \"I've seen him before.\" Tsuruya leapt into a thicket of bushes and he followed, almost landing on her, murmuring a quick apology beneath his breath as they crept forward to watch Ryuguu and his allies."
     nvl clear
-    show Yamane Neutral at right with dissolve
+    show Yamane Grin3 at right with dissolve
     "One of them Kyon knew — Yamane, from his own class, a shady looking character in his own right. Physically, the\nboy was as intimidating as Kunikida, and had large, round glasses and shadowed eyes, cursing him with the appearance and bearing of a sad otaku. {nw}"
     #show Manabe at left with dissolve
     extend "The other one was a taller, thin first year with blond hair. Both were carrying cameras and speaking with Ryuguu in low tones."
     nvl clear
     "He couldn't pick out more than the occasional tone of voice; words weren't carrying at this distance. At a glance, Tsuruya was staring intently, mouthing occasional words to herself and giving slight nods. Kyon was taken aback; could she read lips? {nw}"
+    $ _window = True
     hide Yamane Neutral with dissolve
     #hide Manabe with dissolve
+    $ _window = False
     extend " \"Okay,\" she whispered, when Yamane shook his head sharply and turned away, leaving the older boy with the first year in tow. \"Once they're gone, let's go talk to him, okay?\""
     "\"Do you know what they were talking about?\" he whispered back."
     hide Ryo with dissolve
     nvl clear
-    show Tsuruya Neutral1 at left
+    show Tsuruya Neutral1 Flip at left
     show Kyon Ser1 at right
     show Kcut Bandage at right
     with dissolve
     "\"I'm not that goods yet,\" Tsuruya said apologetically, giggling very quietly. \"But I got that Ryuguu-san is mad at the other twos. Somethings went wrong, probably what we did on Sunday, so Ryuguu-san's having trouble, and the other two.... "
     "Hmm. The one with glasses said something about not caring about Ryuguu-san's problems, and that he still wanted money. I guess Ryuguu-san must owe him something.... The first year student was just following along, doing what he was tolds; he doesn't seem to be as high up on the food chains.\""
     nvl clear
-    show Tsuruya Neutral2
+    show Tsuruya Neutral2 Flip
     show Kyon Ser3
     "\"The one with glasses is Yamane-san, from my own class,\" Kyon said helpfully. \"I think he's in the photography club? I know he takes a lot of pictures during school events.\""
     show Kyon Ser1
-    show Tsuruya Susp1
+    show Tsuruya Susp1 Flip
     "\"Hmm, so he's probably a foreman or one of the workers,\" Tsuruya mused, eyes sharpening. \"Okies, they're gone; let's get Ryuguu-san before anyone else shows up or he leaves.\""
     show Tsuruya Smile1 at center with move
-    show Ryo Neutral1 at left with dissolve
+    show Ryo Neutral1 Flip at left with dissolve
     nvl clear
     "Kyon nodded at her, and the pair stood up, walking out of the bush and brushing leaves off. Ryuguu saw them emerge and jolted a bit, then crossed his arms over his chest and scowled. {nw}"
-    show Ryo Ang1
+    show Ryo Ang1 Flip
     extend "\"What?\" he snapped, the moment they drew within hearing range."
     nvl clear
     show Kyon Ser1
     "Uncertain of his role, Kyon just took up the loose, relaxed stance he had used when fighting Ryuguu last time, and said nothing."
     show Tsuruya Hap4
     "\"How's business?\" Tsuruya asked, suddenly politely professional."
-    show Ryo Neutral1
+    show Ryo Neutral1 Flip
     show Tsuruya Smile2
     "Ryuguu frowned, then said, \"Shouldn't be any of yours.... But.... Well, I heard you were a bit ... strange, Tsuruya-san. So, you want to buy?\""
     nvl clear
     show Tsuruya Hap5
     "\"Maybe,\" Tsuruya allowed. \"Whatcha got?\""
-    show Ryo Shifty2
+    show Ryo Shifty2 Flip
     show Tsuruya Smile1
     "\"If you don't know, I'm not selling.\""
     show Tsuruya Grin6
     "\"Oh, I knows what you're selling,\" she said evenly. \"Hum.... Anything from this year's students?\""
     nvl clear
-    show Ryo Neutral1
+    show Ryo Neutral1 Flip
     show Tsuruya Grin4
     "\"A bit,\" Ryuguu allowed, dropping his hands to his sides. \"Now, look, I'll sell to you, but only because my normal distributor is having problems. Understand that this is top-shelf stuff, meant to be shipped to the highest paying customers and then resold. So that's the kind of price I'm looking for. No copy protection, no censorship — this is the real deal.\""
     nvl clear
@@ -519,45 +541,48 @@ label HAB1:
     "Kyon blinked, wondering what the hell was going on, but deciding he already didn't like it. He tried to keep his expression neutral."
     show Tsuruya Grin5
     "\"So, what's the price?\" Tsuruya asked, grinning. \"I didn't bring a checkbook with me, nyoro~!\""
-    show Ryo Grin1
+    show Ryo Grin1 Flip
     show Tsuruya Grin2
     nvl clear
     "\"Right now I've got three SD cards, sorted by year,\" Ryuguu said, shifting his speech pattern from 'thug' to 'semi-competent salesman'. He fanned out the three cards between his fingertips, turning them back and forth to show Tsuruya both sides of the small digital chips. \"First year, twenty thousand yen, second year, fifteen thousand, third year, fifteen thousand.\""
     show Tsuruya Hap4
     "\"And these are sources?\" Tsuruya pressed. \"Originals, so there's no copies?\""
     nvl clear
-    show Ryo Grin2
+    show Ryo Grin2 Flip
     show Tsuruya Smile1
     "\"What, you want them exclusively?\" Ryuguu asked, quirking one eyebrow up in a smirk."
-    show Ryo Shifty1
+    show Ryo Shifty1 Flip
     show Tsuruya Grin6
     "Tsuruya nodded quickly. \"Think about it,\" she said. \"If I'm paying to be a reseller, what's the point if the next guys comes along and buys them then undercuts me? Yous got to be a sharp businessman to make it here, don'tcha?\""
-    show Ryo Shifty2
+    show Ryo Shifty2 Flip
     show Tsuruya Grin3
     nvl clear
     "\"Double the price,\" he said, shrugging. {nw}"
-    show Ryo Shifty3
+    show Ryo Shifty3 Flip
     extend "\"Then, sure, I'll give you everything and exclusive distribution. Only caveat is that I'm absolutely keeping personal copies.\""
     show Tsuruya Grin5
     "\"Hmm,\" Tsuruya replied, touching one fingertip to her lips and gazing upward, musing. \"Well, one hundred thousand yens is rather a lot, don'tcha think? Especially since I'm trying to see if I'm in the third years?\" She turned to Kyon and asked, \"Should we apply our discount?\""
-    show Ryo Shifty2
+    show Ryo Shifty2 Flip
     show Kyon Ser3
     show Tsuruya Grin2
     nvl clear
     "\"Yeah,\" Kyon agreed, nodding. \"I think we can negotiate a better price.\""
-    show Ryo Neutral1
+    show Ryo Neutral1 Flip
     show Kyon Ser1
     "\"Oh, don't even think about it,\" Ryuguu retorted, waving a hand dismissively. \"I'm the one holding the cards here, so to speak. There's no way that—\""
     show Tsuruya Grin4
     stop music fadeout 1
     queue music "Music/KamadoumaEnd.mp3"
     nvl clear
+    $ _window = True
     "Tsuruya's hand darted out, lightning-fast, and she snatched two of the cards from Ryuguu's grasp before the boy could react. {nw}"
     show Ryo Attack1 Flip
-    extend "Immediately his face went red, and his scowl turned murderous. "
+    extend "Immediately his face went red, and his scowl turned murderous. {nw}"
     show Ryo Attack1 Flip at TenthLeft with fast_move
+    $ _window = False
     extend "He launched a punch towards the tall girl in retaliation, growling from low in his throat."
     nvl clear
+    $ _window = True
     show Tsuruya Sup1:
         xalign 1.0 yalign 1.4
     show Kyon Unhap5 at HalfRight
@@ -566,13 +591,14 @@ label HAB1:
     play sound "SE/lowswoosh.mp3"
     pause 0.2
     play sound "SE/impact.mp3"
-    "Already waiting for such an opening, Kyon grabbed the extended fist as Ryuguu attacked, while Tsuruya ducked\naway. "
+    "Already waiting for such an opening, Kyon grabbed the extended fist as Ryuguu attacked, while Tsuruya ducked away. {nw}"
     play sound "SE/impact.mp3"
     show Kyon Unhap5 at HalfLeft
     show Kcut Bandage at HalfLeft
     show Ryo Ang1:
         xalign -0.2 yalign 1.0
     with rapid_move
+    $ _window = False
     extend "Giving an unbalancing wrench to the captured appendage, Kyon pulled Ryuguu off balance and spun him around before shoving the boy violently forward, his arm pinned behind his back at an awkward angle. The third year boy's nose smashed into the equipment shed behind him, making a loud crunch and sending a spray of blood out."
     nvl clear
     show Tsuruya Ang1
@@ -586,13 +612,15 @@ label HAB1:
     nvl clear
     show Kyon Ang2
     "\"You are not the biggest business in this school, or this town. There are certain people in this school you {i}do not{/i} screw with. If you ever even {i}think{/i} of laying a finger on any of my subordinates, or interfering with any of them in any way, believe me, this is going to be the {i}least{/i} of your worries.\nAny time, any place — I will not allow it.\" "
+    nvl clear
     show Kyon Unhap5 at center
     show Kcut Bandage at center
     show Ryo Attack1 at left
     with move
-    extend "He pulled the boy back, spinning him around, and when Ryuguu belatedly tried to punch with his free hand, {nw}"
+    "He pulled the boy back, spinning him around, and when Ryuguu belatedly tried to punch with his free hand, {nw}"
     show Ryo Attack2 Flip
     play sound "SE/lowswoosh.mp3"
+    $ _window = True
     show Kyon Unhap5:
         xalign 0.5 yalign 1.0
         linear 0.2 yalign 1.5
@@ -611,6 +639,7 @@ label HAB1:
         xalign -0.2 yalign 20.0
     play sound "SE/Thump1.wav"
     hide Ryo
+    $ _window = False
     extend "and returning a much stronger one, which sent the upperclassman smashing back into the shed, eyes rolling up before he collapsed."
     nvl clear
     show Kyon Unhap5:
@@ -621,11 +650,13 @@ label HAB1:
         linear 0.2 yalign 1.0
     show Tsuruya Sup1
     "\"Yow,\" Tsuruya allowed, eyes wide. \"You okay there, Kyon-kun?\" {nw}"
+    $ _window = True
     show Tsuruya Ang3:
         linear 0.2 xalign 0.08 yalign 2.44
     show Kyon Unhap5 at HalfRight
     show Kcut Bandage at HalfRight
     with fast_move
+    $ _window = False
     extend "Despite her question, her attention was on the prone boy as she crouched, rifling through his pockets and pulling out a small stack of mini-discs and SD cards. \"We could have gotten more answers out of him, you knows....\""
     show Kyon Sigh1
     "\"Still can,\" Kyon pointed out, cracking his neck and expelling a long sigh. \"Sorry. This guy ... really pisses me off.\""
@@ -639,13 +670,16 @@ label HAB1:
     nvl clear
     show Kyon Unhap4
     "Kyon took a breath and did as she instructed, having no trouble maintaining his glower at the prone boy as Tsuruya cheerfully slapped him awake, ignoring the blood flowing\nfrom Ryuguu's nose. \"Wakey-wakey!\" Tsuruya called, {nw}"
+    $ _window = True
     show Tsuruya Hap5:
         xalign 0.08 yalign 2.44
         linear 0.2 xalign 1.0 yalign 1.0
     show Kyon Unhap4 at center
     show Kcut Bandage at center
-    with fast_move
-    extend "stepping back when Ryuguu jerked awake and tried to fumble for her. {w}\"Okies! Now, you want to answers some of my questions, or maybe let Kyon-kun heres give you some more manual attitude adjustments?\""
+    with move
+    $ _window = False
+    extend "stepping back when Ryuguu jerked awake and tried to fumble for her."
+    "\"Okies! Now, you want to answers some of my questions, or maybe let Kyon-kun heres give you some more manual attitude adjustments?\""
     nvl clear
     show Tsuruya Grin2
     "\"Wha,\" he managed, wincing. \"What are you.... Hey! I don't have to take this! I've got friends high up! You do not know who you're messing with!\""
@@ -711,10 +745,10 @@ label HAB1:
     show Tsuruya Smile2
     show Kyon Puzzle1 Flip
     "\"Kanae-chan is in class 1-7,\" he said, frowning. \"I'm a bit worried about her....\""
-    nvl clear
     show Kyon Worry1 Flip
     show Tsuruya Hap5
     "\"You got it,\" Tsuruya agreed. \"Satoshi-san should be easier to shake down than Ryuguu-san, here.\""
+    nvl clear
     scene bg SchoolEntranceLeft with fade
     show Tsuruya Smile2 at HalfRight
     show Kyon Neutral2 Flip at left
@@ -846,43 +880,52 @@ label HAB1:
     stop music fadeout 1
     queue music "Music/MysteryTime.mp3"
     play sound "SE/dooropenfast.wav"
-    show Kyon Ser1 at center
-    show Koizumi Crossed Neutral1 at left
+    show Kyon Ser1 Flip:
+        xalign 0.4 yalign 1.0
+    show Kcut Bandage Flip:
+        xalign 0.4 yalign 1.0
+    show Koizumi Crossed Neutral1 at left behind Kyon
     show Yuki Ang1 behind Kyon:
         xalign 0.7 yalign 1.0
     with dissolve
     "Kyon marched to the door and flung it open without knocking, startling the Student Council president as he shuffled through a short stack of papers. Kimidori Emiri sat in a chair to one side, her pad of paper and pen ready, though she seemed coolly expectant."
+    nvl clear
     "Kyon strode to the middle of the room and stood in an arrogant pose, arms crossed over his chest as he stared down at the president with an expression of clear boredom. Yuki stood a half-step behind him on his left, eyes fixed on Emiri. {nw}"
     play sound "SE/doorclose2.mp3"
+    $ _window = True
     show Mikuru Neutral1 at right behind Yuki with dissolve
+    $ _window = False
     extend "Mikuru tried to take up a flanking position on his right, but was beaten by Koizumi, so settled for closing the door and standing next to Yuki."
     nvl clear
-    show Kyon Unhap2
+    show Kyon Unhap2 Flip
     "\"Well?\" Kyon demanded, when the president spent a long moment staring. \"I'm here.\""
-    show Kyon Unhap4
-    #hide Yuki
-    #hide Mikuru
-    #with dissolve
+    hide Yuki
+    hide Mikuru
+    with dissolve
     #show President at right with dissolve - Irritated with frown
+    show Kyon Unhap4 Flip
     "\"I don't...\" the president began, frowning and scanning across the group. \"I expected you to bring her along, if you were going to appear in force.\""
     nvl clear
-    show Kyon Neutral2
+    show Kyon Neutral2 Flip
     #show President - Irritated with frown, mouth closed
     "\"Yeah, okay,\" Kyon allowed, relaxing his arms and taking on his more normal demeanor. \"So, do you have anything for me, President, or is this Kimidori-san's call?\""
     nvl clear
-    show Kyon Neutral3
-    #hide President with dissolve
-    #show Emiri at right with dissolve at right - Smile
+    #hide President
+    show Kimidori Smile Flip at right #Open mouth
+    with dissolve
+    show Kyon Neutral3 Flip
     "Emiri smiled awkwardly and set her pen down. \"Currently, everything here is within the technical limitations of the Student Council's jurisdiction,\" she explained. \"I do not plan to usurp the president; I'm merely a secretary.\""
-    show Kyon Ser2
-    #show Emiri - Smile, mouth closed
+    nvl clear
+    show Kyon Ser2 Flip
+    show Kimidori Smile Flip
     "\"I really have no patience for intrigue, just now. I'm in the middle of an investigation that I'm honestly ashamed to find out you're doing nothing about,\" he said pointedly, staring at Emiri."
     nvl clear
-    show Kyon Ser1
-    #show Emiri - Confused
+    show Kyon Ser1 Flip
+    show Kimidori Confused Flip
     "Emiri looked confused and shook her head. \"I'm sorry, I'm afraid I don't understand....\""
-    #hide Emiri with dissolve
-    #show President with dissolve at right - Neutral with frown
+    hide Kimidori
+    #show President at right - Neutral with frown
+    with dissolve
     "\"This attitude doesn't become you,\" the president added with a frown at Kyon. \"My job is to keep Suzumiya-kun in line, not {i}you{/i}. Koizumi-kun, what's this all about?\""
     nvl clear
     show Koizumi Crossed Smile3
@@ -895,48 +938,51 @@ label HAB1:
     "\"Really?\" the president asked, raising an eyebrow. "
     #show President - Annoyed
     extend "\"Well, in that case,\" he asked sardonically, turning his attention back to Kyon, \"what's the plan?\""
-    show Kyon Neutral2
+    show Kyon Neutral2 Flip
     #show President - Annoyed, mouth closed
     "\"Let's start with how much trouble I'm in for protecting Kanae-chan from that pervert,\" Kyon suggested."
     nvl clear
-    show Kyon Neutral3
+    show Kyon Neutral3 Flip
     #show President - Neutral
-    "\"Technically none,\" the president admitted. \"It's a behavior issue, but all accounts indicate you in self defense, or in defense of a classmate. Ryuguu-san is already being expelled just on the grounds of bringing a weapon into the school and assaulting fellow students ..."
-    "though he was taken away in an ambulance. In any event, because of that, orders were handed down from the principal to discuss your behavior.... I have the authority to demand a meeting with an advisor for you — several if I believe that your behavior is likely to become problematic. Okabe-sensei is your advisor, right?\""
+    "\"Technically none,\" the president admitted. \"It's a behavior issue, but all accounts indicate you in self defense, or in defense of a classmate. Ryuguu-san is already being expelled just on the grounds of bringing a weapon into the school and assaulting fellow students ... though he was taken away in an ambulance. "
     nvl clear
-    show Kyon Unhap1
+    "In any event, because of that, orders were handed down from the principal to discuss your behavior.... I have the authority to demand a meeting with an advisor for you — several if I believe that your behavior is likely to become problematic. Okabe-sensei is your advisor, right?\""
+    nvl clear
+    show Kyon Unhap1 Flip
     #show President - Neutral with frown, mouth closed
     "Kyon grimaced. {nw}"
-    show Kyon Sigh1
+    show Kyon Sigh1 Flip
     extend "\"Don't get me wrong, he's a good guy, but I'm not exactly eager for that,\" he said. \"My family?\""
-    show Kyon Sigh3
+    show Kyon Sigh3 Flip
     #show President - Neutral, closed eyes
     "\"Already notified,\" the president said, almost apologetically. \"The administrative staff did that first thing.\""
     nvl clear
-    show Kyon Sigh1
+    show Kyon Sigh1 Flip
     #show President - Neutral, open eyes, closed mouth
     "\"Figured. Alright. So, I'm going to tell you right now, when this is over, you're actually going to thank me for what I\ndid today, and what's going to happen in the coming days.\" {nw}"
-    #hide President with dissolve
-    #show Emiri with dissolve at right - Neutral
-    show Kyon Ser2
+    #hide President
+    show Kimidori Neutral Flip at right
+    with dissolve
+    show Kyon Ser2 Flip
     extend "Turning his full attention to Emiri, he added, \"Seeing as I'm not up for intrigue at the moment, can you cut to the chase and say {i}why{/i} you've pulled the strings you have to arrange this?\""
     nvl clear
-    show Kyon Ser1
-    #show Emiri - Sigh, eyes closed
+    show Kyon Ser1 Flip
+    show Kimidori Sigh Flip
     "Emiri sighed, shifting her shoulders uncomfortably. \"You are becoming a bit troublesome,\" she allowed, shaking her head. "
-    #show Emiri - Unhappy
+    show Kimidori Unhap Flip #open mouth
     extend "\"I wanted to relate to you in clear terms that all else aside, the entity has not deviated from their chosen course of action.\""
-    show Kyon Sigh2
+    show Kyon Sigh2 Flip
     "\"That's a real pity,\" Kyon sighed. \"I didn't want us to be enemies.\""
     nvl clear
-    show Kyon Sigh4
-    #show Emiri - Neutral
+    show Kyon Sigh4 Flip
+    show Kimidori Neutral Flip
     "\"Well, you made your decision,\" Emiri said with an apologetic shrug. \"I, personally, mean you no harm. My role has naturally changed, as I am denied administrative access over Nagato Yuki. For the time being, despite our differences concerning this issue at large, I wish to remain as neutral as possible to function as negotiator between yourselves and the entity."
-    "Until such time as you inform me otherwise, I will assume that you continue to maintain your stance. However ... should things change and you decide to side with us, the entity also holds no enmity against you.\""
     nvl clear
-    #show Emiri - Neutral, closed mouth
+    "Until such time as you inform me otherwise, I will assume that you continue to maintain your stance. However ... should things change and you decide to side with us, the entity also holds no enmity against you.\""
+    show Kimidori Neutral Flip
     "The student council president blinked and looked at his secretary sidelong, obviously very confused."
-    show Kyon Ser2
+    nvl clear
+    show Kyon Ser2 Flip
     "\"I don't really believe that last part, but it's nice of you to say.\" After a breath, Kyon warned in a low voice, \"I just want to point out, though, that a challenge against any one of us is a challenge against {i}all{/i} of us, so even the entity may have bitten off more than it can chew.\""
     nvl clear
     stop music fadeout 1
@@ -945,13 +991,15 @@ label HAB1:
     hide Yuki
     hide Mikuru
     hide Koizumi
-    show Kyon Smile2 at left
+    show Kyon Ser2 Flip at left
+    show Kcut Bandage Flip at left
+    hide Kimidori
+    #show President at right - Neutral, mouth closed
     with dissolve
     show Haruhi Hips Ang1 at center with moveinleft
-    #hide Emiri with dissolve
-    #show President with dissolve at right - Neutral, mouth closed
     "Before anyone could respond, the door crashed open with a reverberating smash, Haruhi stomping in and taking point in front of Kyon, shooting a dark glare at the president. \"Trying to pick us apart by calling out my underlings when I'm not around, eh?\" she challenged, bristling with fury. \"Well, you've got a lot to learn! A challenge against one of us is a challenge against {i}all{/i} of us!\""
     nvl clear
+    show Kyon Smile2 Flip
     show Haruhi Hips Ang2
     "Mikuru blinked, catching Kyon's smirk at the girl in front of him as she echoed his words of only moments before. Emiri's expression had returned to blank neutrality, with small traces of surprise showing as she picked her pen back up and began jotting notes down."
     show Haruhi Hips Ang3
@@ -959,21 +1007,29 @@ label HAB1:
     nvl clear
     show Haruhi Hips Ang4
     #show President - Annoyed, mouth closed (with Scary Shiny Glasses, if possible)
-    "For his part, the bespectacled boy gave her a cool look, pushing on the bridge of his glasses with two fingers, flashing bright reflective light off them perfectly into Haruhi's eyes as he adjusted the lenses. He instantly re-assumed his role in Haruhi's presence, his expression gleaming with cold malice. The chief of the SOS Brigade didn't flinch, her angry smile only growing wider."
+    "For his part, the bespectacled boy gave her a cool look, pushing on the bridge of his glasses with two fingers, flashing bright reflective light off them perfectly into Haruhi's eyes as he adjusted the lenses."
     nvl clear
+    "He instantly re-assumed his role in Haruhi's presence, his expression gleaming with cold malice. The chief of the SOS Brigade didn't flinch, her angry smile only growing wider."
     show Haruhi Hips Ang3
-    "\"Even using underhanded tactics like calling my vice commander in during {i}classes{/i}?\" She paced back and forth shaking her head sadly. \"I thought you were a rival, maybe someday even an equal, but you're just a sad little man who hides behind whatever political tricks he can to cause trouble for people he doesn't like personally! Trying to make things difficult for Kyon when he defended a fellow student from a crazed pervert?! Don't make me think that Kitago is a school unworthy of its reputation!\""
+    "\"Even using underhanded tactics like calling my vice commander in during {i}classes{/i}?\" She paced back and forth shaking her head sadly."
+    nvl clear
+    "\"I thought you were a rival, maybe someday even an equal, but you're just a sad little man who hides behind whatever political tricks he can to cause trouble for people he doesn't like personally! Trying to make things difficult for Kyon when he defended a fellow student from a crazed pervert?! Don't make me think that Kitago is a school unworthy of its reputation!\""
     show Haruhi Hips Ang4
     nvl clear
     #show President - Angry, narrow eyes
-    "\"You overreact,\" the president said in a frosty tone. \"Marching in with your pompous attitude and blatant disregard for policy.... I invite you to check every step of the proceedings of this inquiry; you'll find that each and every one was in complete accordance with official guidelines and policies! The only breach here is that Kyon-kun was summoned alone. There was no request for Koizumi-kun, Nagato-kun, Asahina-kun, or yourself to be here."
+    "\"You overreact,\" the president said in a frosty tone. \"Marching in with your pompous attitude and blatant disregard for policy.... I invite you to check every step of the proceedings of this inquiry; you'll find that each and every one was in complete accordance with official guidelines and policies!"
     nvl clear
+    "\"The only breach here is that Kyon-kun was summoned alone. There was no request for Koizumi-kun, Nagato-kun, Asahina-kun, or yourself to be here."
     #show President - Angry, wider mouth
-    "\"Really, storming your way into an official meeting that doesn't involve you personally? This matter has absolutely nothing to do with your so-called club, that unofficial organization that I refuse to acknowledge! This is a personal matter between the student council and a single student. Your show of force is both unseemly and needlessly exaggerated.\""
+    "\"Really, storming your way into an official meeting that doesn't involve you personally?"
+    nvl clear
+    "\"This matter has absolutely nothing to do with your so-called club, that unofficial organization that I refuse to acknowledge! This is a personal matter between the student council and a single student. Your show of force is both unseemly and needlessly exaggerated.\""
     nvl clear
     show Haruhi Hips Ang1
     #show President - Angry, closed mouth
-    "\"Ooh!\" Haruhi exclaimed, standing still to stomp one foot on the floor and shoot a murderous glare at the president. \"Nice try,\" she retorted with a sneer, \"but if it smells like a load of crap, looks like a load of crap, and acts like a load of crap ... then it's a {i}load of crap{/i}! One of my brigade members was attacked by a crazed student! Another of my brigade members did his civic duty not only as a member of the brigade you don't acknowledge, but as a {i}citizen{/i}! An upstanding {i}student{/i} of this school!"
+    "\"Ooh!\" Haruhi exclaimed, standing still to stomp one foot on the floor and shoot a murderous glare at the president. \"Nice try,\" she retorted with a sneer, \"but if it smells like a load of crap, looks like a load of crap, and acts like a load of crap ... then it's a {i}load of crap{/i}!"
+    nvl clear
+    "\"One of my brigade members was attacked by a crazed student! Another of my brigade members did his civic duty not only as a member of the brigade you don't acknowledge, but as a {i}citizen{/i}! An upstanding {i}student{/i} of this school!"
     nvl clear
     show Haruhi Hips Ang3
     "\"You're all high-and-mighty behind your desk, proud of the fact that you get to pick on my crew just because you don't like them! What about all the other students who just {i}watched{/i} a crazed upperclassman with a {i}knife{/i} haul away a defenseless first year student? Not one of {i}them{/i} is worthy of reprimand?\""
@@ -995,7 +1051,9 @@ label HAB1:
     "\"No problem, no problem!\" Haruhi said brightly, seeming charged with her victory over the student council president. \"Tell your teachers to take their complaints to the student council! They hauled us out of class for this, after all.\"{p}Turning to Kyon, she added in a more serious tone, \"You need to be careful, Kyon! I can't always bail you out when you get into trouble like this! And you owe Koizumi-kun a thanks for texting me that this was even happening!\""
     nvl clear
     show Haruhi Smile3
-    show Kyon Smile3 at center with dissolve
+    show Kyon Smile3 at center 
+    show Kcut Bandage at center
+    with dissolve
     "\"Oh, yeah? Thanks, Koizumi, glad you're so on-the-ball.\" The esper maintained his eternal smile, nodding slightly. \"Anyway, Haruhi, would you be mad at me if I was confident enough in you to say that you could bail me out again?\" Kyon asked her."
     nvl clear    
     show Kyon Smile2
@@ -1025,7 +1083,9 @@ label HAB1:
     show Haruhi Quest2
     show Mikuru Smile2
     "Mikuru smiled, shaking her head {nw}"
+    $ _window = True
     hide Mikuru with moveoutright
+    $ _window = False
     extend "and waving as she turned to take the walkway to the third year classes."
     nvl clear
     show Kyon Smile4

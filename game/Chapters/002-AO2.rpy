@@ -238,16 +238,16 @@ label AO2:
     play music "Music/Kokuhaku.mp3"
     scene bg YukiRoomCenter
     show Haruhi Casual Worry1 at left
-    show Yuki Side1 at HalfLeft
+    show Yuki Side1 Flip at HalfLeft
     show Kyon Casual Ser1 at right
     with fade
     "\"So,\" Haruhi asked, her back to the large window of Yuki's living room, \"did it work?\""
     show Haruhi Casual Quest2
-    show Yuki Side1 at center with move
-    show Yuki Talk1
+    show Yuki Side1 Flip at center with move
+    show Yuki Talk1 Flip
     "Yuki removed her fingertips from Haruhi's head and said, \"Yes.\""
     show Kyon Casual Puzzle1
-    show Yuki Side1
+    show Yuki Side1 Flip
     "\"You're not going to die?\" Kyon asked quickly."
     nvl clear
     show Kyon Casual Worry1
@@ -789,7 +789,7 @@ label AO2:
     nvl clear
     show Yuki Right Neutral2
     show Haruhi Casual Pout2
-    "\"So,\" she mumbled. \"That's why he was so worked up about it? Well ... I didn't know. If you hadn't been— But I guess, you were only following orders.\""
+    "\"So,\" she mumbled. \"That's why he was so worked up about it? Well ... I didn't know. If you hadn't been— But I guess, you were only following orders."
     show Haruhi Casual Unhap1
     "\"Well, now I know why you were frustrated. Is that why you made it so you never met me?\""
     nvl clear
@@ -1107,6 +1107,7 @@ label AO2:
     show Kyon Sigh2
     extend "he groaned, rubbing the back of his head where it had hit the wall. There was no way he would catch up with her while recovering his breath." 
     play sound "SE/doorknock.mp3"
+    show Kyon Sigh2 at center with move
     "Sighing, he trudged to the club room, knocking on the door before entering."
     nvl clear
     play sound "SE/dooropenslow.mp3"
@@ -1172,7 +1173,7 @@ label AO2:
     nvl clear
     show Kyon Neutral3
     show Koizumi Think Smile2
-    "\"Only particularly intense emotions are felt,\" he answered, staring at the board and placing his first stone thoughtfully. \"Even then, it's frequently vague ... it doesn't give me any clue as to where she is, for example, just whatever intense emotion is there.\""
+    "\"Only particularly intense emotions are felt,\" he answered, staring at the board and placing his first stone thoughtfully. \"Even then, it's frequently vague ... it doesn't give me any clue as to where she is, for example, just whatever intense emotion is there."
     show Koizumi Shrug Sigh1:
         xalign -1.15 yalign 1.0    
     "\"Naturally, this was quite awkward when I first was granted my powers, but I can usually tell my feelings apart from hers, now.\""
@@ -1421,9 +1422,9 @@ label AO2:
     "\"Well,\" he said, shrugging. \"Is there anything else I {i}should{/i} know?\""
     nvl clear
     show Kyon Casual Sup2 
-    play sound "SE/tiresqueal.mp3"
+    play sound "SE/tiresquealFar.mp3"
     pause 1.5
-    play sound "SE/Crash3.mp3"
+    play sound "SE/CrashFar.mp3"
     "Down a distant street, he heard the squeal of tires on pavement, then a thunderous crash. He turned his head to look, but found his face being turned back by Mikuru's hand." 
     show MikuruBig Sad2
     "\"Pay no mind,\" she said, somewhat sadly. \"I'll give you something nice to go home and forget about this for now. Get plenty of rest tonight, okay?\""
